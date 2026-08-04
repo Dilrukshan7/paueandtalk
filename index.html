@@ -3,7 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pause &amp; Talk — A Calm Space to Be Heard</title>
+<title>Pause &amp; Talk — A Safe Space to Be Heard</title>
+
+<!-- Favicon — replace favicon.png with your own icon file -->
+<link rel="icon" type="image/jpeg" href="logo.jpeg">
+<link rel="apple-touch-icon" href="logo.jpeg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -11,87 +16,81 @@
 body{font-family:'Inter',sans-serif;background:#FAF6EE;color:#2B2B27;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 a{color:#1F3D2E;text-decoration:none;}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
-@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
 @keyframes pulseRing{0%{transform:scale(1);opacity:.55;}100%{transform:scale(1.9);opacity:0;}}
 
-/* NAV */
-#main-nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(20px,5vw,64px);transition:background .3s ease,box-shadow .3s ease;}
-#main-nav.scrolled{background:rgba(250,246,238,.92);backdrop-filter:blur(14px);box-shadow:0 6px 24px -12px rgba(31,61,46,.18);}
+/* ── NAV ──────────────────────────────────────────────── */
+#main-nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px clamp(20px,5vw,64px);transition:background .3s,box-shadow .3s;}
+#main-nav.scrolled{background:rgba(250,246,238,.93);backdrop-filter:blur(14px);box-shadow:0 6px 24px -12px rgba(31,61,46,.18);}
 .nav-logo{display:flex;align-items:center;gap:10px;}
-.nav-logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:19px;color:#1F3D2E;letter-spacing:-.01em;}
-.nav-links{display:flex;align-items:center;gap:30px;}
-.nav-links a{font-size:15px;font-weight:500;color:#2B2B27;transition:opacity .2s;}
+.nav-logo img{height:38px;width:auto;object-fit:contain;}
+.nav-logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:18px;color:#1F3D2E;letter-spacing:-.01em;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-links a{font-size:14.5px;font-weight:500;color:#2B2B27;transition:opacity .2s;}
 .nav-links a:hover{opacity:.6;color:#1F3D2E;}
-.nav-cta-btn{background:#1F3D2E;color:#FAF6EE !important;padding:11px 22px;border-radius:100px;font-size:14px;font-weight:600;transition:transform .2s,background .2s;}
+.nav-cta-btn{background:#1F3D2E;color:#FAF6EE!important;padding:10px 20px;border-radius:100px;font-size:14px;font-weight:600;transition:transform .2s,background .2s;}
 .nav-cta-btn:hover{background:#14261C;transform:translateY(-1px);}
 .hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:transparent;border:none;cursor:pointer;border-radius:10px;}
 #mobile-menu{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#FAF6EE;padding:20px clamp(20px,5vw,64px) 28px;box-shadow:0 20px 30px -20px rgba(31,61,46,.3);border-bottom:1px solid #E4DDC9;}
 #mobile-menu.open{display:flex;}
 #mobile-menu a{font-size:17px;font-weight:600;color:#1F3D2E;padding:10px 0;border-bottom:1px solid #E4DDC9;}
-#mobile-menu .mob-cta{margin-top:14px;text-align:center;background:#1F3D2E;color:#FAF6EE !important;padding:13px;border-radius:100px;font-size:15px;font-weight:600;border-bottom:none;}
+#mobile-menu .mob-cta{margin-top:14px;text-align:center;background:#1F3D2E;color:#FAF6EE!important;padding:13px;border-radius:100px;font-size:15px;font-weight:600;border-bottom:none;}
 @media(max-width:899px){.nav-links{display:none;}.hamburger{display:flex;}}
 
-/* Sections */
+/* ── SHARED ───────────────────────────────────────────── */
 section{scroll-margin-top:80px;}
-
-/* Shared */
 .section-label{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#C7A464;}
 .h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:#1F3D2E;letter-spacing:-.01em;}
-.img-slot{background:linear-gradient(135deg,#E4EBE1 0%,#C9D4C9 100%);display:flex;align-items:center;justify-content:center;color:#8FA893;font-size:13px;font-weight:500;}
 .card{background:#FFF;border:1px solid #E4DDC9;border-radius:22px;padding:30px;transition:transform .25s,box-shadow .25s;}
 .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -18px rgba(31,61,46,.22);}
 .icon-box{width:44px;height:44px;border-radius:12px;background:#E4EBE1;display:flex;align-items:center;justify-content:center;}
-.btn-primary{display:inline-block;background:#1F3D2E;color:#FAF6EE;padding:16px 30px;border-radius:100px;font-size:16px;font-weight:600;transition:transform .2s,background .2s;}
+.btn-primary{display:inline-block;background:#1F3D2E;color:#FAF6EE;padding:15px 28px;border-radius:100px;font-size:15px;font-weight:600;transition:transform .2s,background .2s;}
 .btn-primary:hover{background:#14261C;transform:translateY(-2px);color:#FAF6EE;}
-.btn-outline{display:inline-block;border:1.5px solid #1F3D2E;color:#1F3D2E;padding:15px 28px;border-radius:100px;font-size:16px;font-weight:600;transition:background .2s;}
+.btn-outline{display:inline-block;border:1.5px solid #1F3D2E;color:#1F3D2E;padding:14px 26px;border-radius:100px;font-size:15px;font-weight:600;transition:background .2s;}
 .btn-outline:hover{background:#E4EBE1;color:#1F3D2E;}
 
-/* FAQ */
+/* ── FAQ ──────────────────────────────────────────────── */
 .faq-item{border-bottom:1px solid #E4DDC9;}
 .faq-btn{width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;padding:20px 4px;text-align:left;}
-.faq-q{font-size:16.5px;font-weight:600;color:#1F3D2E;}
+.faq-q{font-size:16px;font-weight:600;color:#1F3D2E;}
 .faq-chevron{transition:transform .3s;flex-shrink:0;}
 .faq-panel{max-height:0;overflow:hidden;transition:max-height .35s ease;}
 .faq-panel.open{max-height:300px;}
 .faq-chevron.open{transform:rotate(180deg);}
 
-/* Form */
-.form-field{display:flex;flex-direction:column;gap:8px;}
+/* ── FORM ─────────────────────────────────────────────── */
+.form-field{display:flex;flex-direction:column;gap:7px;}
 .form-field label{font-size:13.5px;font-weight:600;color:#1F3D2E;}
-.form-field input,.form-field select,.form-field textarea{width:100%;padding:13px 16px;border:1px solid #E4DDC9;border-radius:12px;font-size:14.5px;font-family:'Inter',sans-serif;background:#FAF6EE;color:#2B2B27;outline:none;transition:border-color .2s;}
+.form-field input,.form-field select,.form-field textarea{width:100%;padding:12px 15px;border:1px solid #E4DDC9;border-radius:12px;font-size:14px;font-family:'Inter',sans-serif;background:#FAF6EE;color:#2B2B27;outline:none;transition:border-color .2s;}
 .form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:#1F3D2E;}
 .form-field textarea{resize:vertical;}
-.form-submit{background:#1F3D2E;color:#FAF6EE;padding:15px;border:none;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;width:100%;}
+.form-submit{background:#1F3D2E;color:#FAF6EE;padding:14px;border:none;border-radius:100px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;width:100%;}
 .form-submit:hover{background:#14261C;}
 
-/* Floating btns */
-#scroll-top{position:fixed;bottom:104px;right:28px;width:44px;height:44px;border-radius:50%;background:#FAF6EE;border:1px solid #E4DDC9;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 20px -8px rgba(31,61,46,.25);opacity:0;pointer-events:none;transition:opacity .3s;z-index:60;}
-#scroll-top.visible{opacity:1;pointer-events:auto;}
-#wa-float{position:fixed;bottom:28px;right:28px;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.55);z-index:60;transition:transform .2s;}
-#wa-float:hover{transform:scale(1.06);}
-#wa-float .pulse{position:absolute;inset:0;border-radius:50%;background:#25D366;animation:pulseRing 2s ease-out infinite;}
+/* ── INSTAGRAM FLOAT ──────────────────────────────────── */
+#ig-float{position:fixed;bottom:28px;right:28px;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px -8px rgba(220,39,67,.5);z-index:60;transition:transform .2s;}
+#ig-float:hover{transform:scale(1.08);}
+#ig-float .pulse{position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,#f09433,#dc2743);animation:pulseRing 2.2s ease-out infinite;}
 
-/* Responsive hero grid */
+/* ── SCROLL TOP ───────────────────────────────────────── */
+#scroll-top{position:fixed;bottom:100px;right:28px;width:44px;height:44px;border-radius:50%;background:#FAF6EE;border:1px solid #E4DDC9;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 8px 20px -8px rgba(31,61,46,.25);opacity:0;pointer-events:none;transition:opacity .3s;z-index:60;}
+#scroll-top.visible{opacity:1;pointer-events:auto;}
+
+/* ── RESPONSIVE ───────────────────────────────────────── */
 @media(max-width:800px){
-  .hero-grid{grid-template-columns:1fr !important;}
-  .hero-img{display:none;}
-  .contact-grid{grid-template-columns:1fr !important;}
-  .about-grid{grid-template-columns:1fr !important;}
+  .hero-grid{grid-template-columns:1fr!important;}
+  .hero-img-col{display:none;}
+  .contact-grid{grid-template-columns:1fr!important;}
+  .about-grid{grid-template-columns:1fr!important;}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ══ NAV ════════════════════════════════════════════ -->
 <nav id="main-nav">
   <a href="#home" class="nav-logo">
-    <svg width="40" height="30" viewBox="0 0 64 48" style="flex-shrink:0;">
-      <path d="M4 8 C4 4 7 2 11 2 H34 C38 2 41 4 41 8 V22 C41 26 38 28 34 28 H16 L6 34 L8 26 H11 C7 26 4 24 4 20 Z" fill="#1F3D2E"/>
-      <rect x="14" y="10" width="4" height="12" rx="1.5" fill="#FAF6EE"/>
-      <rect x="22" y="10" width="4" height="12" rx="1.5" fill="#FAF6EE"/>
-      <path d="M60 14 C60 10 57 8 53 8 H32 C28 8 25 10 25 14 V26 C25 30 28 32 32 32 H48 L58 40 L56 32 H53 C57 32 60 30 60 26 Z" fill="#8FA893" opacity="0.92"/>
-      <path d="M42.5 16.5 C42.5 15 41.3 14 40 14 C38.9 14 38 14.7 37.5 15.6 C37 14.7 36.1 14 35 14 C33.7 14 32.5 15 32.5 16.5 C32.5 19 37.5 22.5 37.5 22.5 C37.5 22.5 42.5 19 42.5 16.5 Z" fill="#FAF6EE"/>
-    </svg>
+    <img src="logo.jpeg" alt="Pause &amp; Talk Logo">
     <span class="nav-logo-text">Pause &amp; Talk</span>
   </a>
   <div class="nav-links">
@@ -102,7 +101,7 @@ section{scroll-margin-top:80px;}
     <a href="#how-it-works">How It Works</a>
     <a href="#privacy">Privacy</a>
     <a href="#contact">Contact</a>
-    <a href="https://wa.me/94776369518?text=Hi%20Pause%20%26%20Talk%2C%20I%27d%20like%20to%20book%20a%20session." target="_blank" class="nav-cta-btn">Book a Session</a>
+    <a href="https://ig.me/m/pause.andtalk" target="_blank" class="nav-cta-btn">Book a Session</a>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMobile()">
     <svg width="22" height="16" viewBox="0 0 22 16"><line x1="0" y1="1" x2="22" y2="1" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round"/><line x1="0" y1="8" x2="22" y2="8" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round"/><line x1="0" y1="15" x2="22" y2="15" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round"/></svg>
@@ -115,558 +114,548 @@ section{scroll-margin-top:80px;}
     <a href="#how-it-works" onclick="closeMobile()">How It Works</a>
     <a href="#privacy" onclick="closeMobile()">Privacy</a>
     <a href="#contact" onclick="closeMobile()">Contact</a>
-    <a href="https://wa.me/94776369518?text=Hi%20Pause%20%26%20Talk%2C%20I%27d%20like%20to%20book%20a%20session." target="_blank" class="mob-cta" onclick="closeMobile()">Book a Session</a>
+    <a href="https://ig.me/m/pause.andtalk" target="_blank" class="mob-cta" onclick="closeMobile()">📩 DM to Book</a>
   </div>
 </nav>
 
-<!-- HOME -->
-<section id="home" style="padding:170px clamp(24px,6vw,96px) 80px;max-width:1320px;margin:0 auto;">
-  <div class="hero-grid" style="display:grid;grid-template-columns:minmax(320px,1fr) minmax(280px,0.85fr);gap:56px;align-items:center;">
+<!-- ══ HOME ════════════════════════════════════════════ -->
+<section id="home" style="padding:160px clamp(24px,6vw,96px) 80px;max-width:1320px;margin:0 auto;">
+  <div class="hero-grid" style="display:grid;grid-template-columns:minmax(300px,1fr) minmax(280px,0.9fr);gap:56px;align-items:center;">
     <div style="animation:fadeInUp .8s ease both;">
-      <div style="display:inline-flex;align-items:center;gap:8px;background:#E4EBE1;color:#1F3D2E;padding:7px 16px;border-radius:100px;font-size:13px;font-weight:600;letter-spacing:.02em;">Private listening &amp; companionship</div>
-      <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(38px,5vw,60px);line-height:1.08;letter-spacing:-.02em;color:#1F3D2E;margin:22px 0 20px;">A calm space to say what's on your mind.</h1>
-      <p style="font-size:18px;line-height:1.65;color:#6B6B63;max-width:520px;margin:0 0 34px;">Private, one-on-one conversations with someone who listens — no judgment, no diagnosis, no pressure. Just a real conversation, on your terms.</p>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:#E4EBE1;color:#1F3D2E;padding:7px 16px;border-radius:100px;font-size:13px;font-weight:600;letter-spacing:.02em;">✨ Private listening &amp; companionship</div>
+      <h1 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(36px,5vw,58px);line-height:1.08;letter-spacing:-.02em;color:#1F3D2E;margin:22px 0 20px;">A safe space to share, talk, laugh, or just be heard.</h1>
+      <p style="font-size:17px;line-height:1.7;color:#6B6B63;max-width:500px;margin:0 0 32px;">Like talking to a friend who truly listens — no judgment, no diagnosis, no pressure. Just a real conversation, on your terms. 🤍</p>
       <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:28px;">
-        <a href="https://wa.me/94776369518?text=Hi%20Pause%20%26%20Talk%2C%20I%27d%20like%20to%20book%20a%20session." target="_blank" class="btn-primary">Book a Session</a>
-        <a href="#how-it-works" class="btn-outline">See How It Works</a>
+        <a href="https://ig.me/m/pause.andtalk" target="_blank" class="btn-primary">📩 DM to Book</a>
+        <a href="#how-it-works" class="btn-outline">How It Works</a>
       </div>
-      <p style="font-size:13.5px;color:#6B6B63;letter-spacing:.01em;">100% confidential &nbsp;·&nbsp; Not therapy or crisis care &nbsp;·&nbsp; Available worldwide</p>
+      <p style="font-size:13px;color:#6B6B63;letter-spacing:.01em;">100% confidential &nbsp;·&nbsp; Not therapy or crisis care &nbsp;·&nbsp; From Rs. 300</p>
     </div>
-    <div class="hero-img" style="position:relative;animation:floatY 6s ease-in-out infinite;">
-      <div class="img-slot" style="width:100%;height:420px;border-radius:28px;box-shadow:0 30px 60px -20px rgba(31,61,46,.28);">
-        <span>Hero photo</span>
-      </div>
+    <div class="hero-img-col" style="position:relative;animation:floatY 6s ease-in-out infinite;">
+      <!-- Hero image: Unsplash — people relaxing in a warm sunlit room (free to use) -->
+      <img
+        src="https://images.unsplash.com/photo-1780945806713-4bb884acec90?fm=jpg&q=80&w=900&auto=format&fit=crop"
+        alt="Two people having a warm, calm conversation"
+        style="width:100%;height:430px;object-fit:cover;border-radius:28px;box-shadow:0 30px 60px -20px rgba(31,61,46,.28);"
+        loading="eager"
+      >
     </div>
   </div>
 
   <!-- Trust bar -->
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:100px;padding:32px;background:#FFF;border:1px solid #E4DDC9;border-radius:24px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:90px;padding:28px 32px;background:#FFF;border:1px solid #E4DDC9;border-radius:24px;">
     <div style="display:flex;align-items:center;gap:12px;">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="10" rx="2" stroke="#C7A464" stroke-width="1.6"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="#C7A464" stroke-width="1.6"/></svg>
-      <span style="font-size:14.5px;font-weight:600;color:#1F3D2E;">Confidential by default</span>
+      <span style="font-size:14px;font-weight:600;color:#1F3D2E;">100% confidential</span>
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21C12 21 4 15.5 4 9.8C4 6.6 6.5 4.5 9.2 4.5C10.6 4.5 11.6 5.1 12 6C12.4 5.1 13.4 4.5 14.8 4.5C17.5 4.5 20 6.6 20 9.8C20 15.5 12 21 12 21Z" stroke="#C7A464" stroke-width="1.6"/></svg>
-      <span style="font-size:14.5px;font-weight:600;color:#1F3D2E;">No recordings, ever</span>
+      <span style="font-size:14px;font-weight:600;color:#1F3D2E;">No recordings, ever</span>
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5H16C18 5 19 6.5 19 8.5C19 15 12 19 12 19C12 19 5 15 5 8.5C5 6.5 6 5 8 5Z" stroke="#C7A464" stroke-width="1.6"/><path d="M9 10L11 12L15 8" stroke="#C7A464" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      <span style="font-size:14.5px;font-weight:600;color:#1F3D2E;">A judgment-free space</span>
+      <span style="font-size:14px;font-weight:600;color:#1F3D2E;">Zero judgment 🤍</span>
     </div>
     <div style="display:flex;align-items:center;gap:12px;">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#C7A464" stroke-width="1.6"/><path d="M9 10.5C9 9 10 8 11.5 8C12.7 8 13.4 8.7 13.4 9.6C13.4 11.4 10.5 11.4 10.5 13.2" stroke="#C7A464" stroke-width="1.6" stroke-linecap="round"/><circle cx="10.6" cy="15.6" r="0.9" fill="#C7A464"/></svg>
-      <span style="font-size:14.5px;font-weight:600;color:#1F3D2E;">Talk in voice or text</span>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="2" stroke="#C7A464" stroke-width="1.6"/><line x1="4" y1="9" x2="20" y2="9" stroke="#C7A464" stroke-width="1.6"/><path d="M9 13.5L11 15.5L15 11.5" stroke="#C7A464" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span style="font-size:14px;font-weight:600;color:#1F3D2E;">From Rs. 300</span>
     </div>
   </div>
 
-  <!-- Services overview -->
-  <div style="margin-top:130px;text-align:center;">
-    <span class="section-label">What we offer</span>
-    <h2 class="h2" style="font-size:clamp(28px,3.4vw,40px);margin:14px 0 50px;">Choose the way you'd like to talk.</h2>
+  <!-- Services preview -->
+  <div style="margin-top:110px;text-align:center;">
+    <span class="section-label">Our packages</span>
+    <h2 class="h2" style="font-size:clamp(26px,3.4vw,38px);margin:14px 0 48px;">Pick the time that feels right.</h2>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;">
     <div class="card">
-      <div class="icon-box" style="margin-bottom:18px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#1F3D2E" stroke-width="1.6"/><path d="M5 20C5 16 8 14 12 14C16 14 19 16 19 20" stroke="#1F3D2E" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;color:#1F3D2E;margin:0 0 8px;">Private 1-on-1 Sessions</h3>
-      <p style="font-size:14.5px;color:#6B6B63;line-height:1.6;margin:0;">A dedicated hour, just for you and one listener.</p>
+      <div style="font-size:28px;margin-bottom:14px;">🌱</div>
+      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Friendly Talk</h3>
+      <p style="font-size:13px;color:#C7A464;font-weight:700;margin:0 0 10px;">15 Minutes · Rs. 300</p>
+      <p style="font-size:14px;color:#6B6B63;line-height:1.6;margin:0;">A quick check-in. Share what's on your mind with someone who genuinely listens.</p>
+    </div>
+    <div class="card" style="border-color:#C7A464;box-shadow:0 8px 32px -12px rgba(199,164,100,.3);">
+      <div style="font-size:28px;margin-bottom:14px;">💛</div>
+      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Heart Talk</h3>
+      <p style="font-size:13px;color:#C7A464;font-weight:700;margin:0 0 10px;">30 Minutes · Rs. 500</p>
+      <p style="font-size:14px;color:#6B6B63;line-height:1.6;margin:0;">A fuller conversation. Space to open up, reflect, and feel heard without rushing.</p>
     </div>
     <div class="card">
-      <div class="icon-box" style="margin-bottom:18px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="9" y="3" width="6" height="11" rx="3" stroke="#1F3D2E" stroke-width="1.6"/><path d="M6 11C6 14.3 8.7 17 12 17C15.3 17 18 14.3 18 11" stroke="#1F3D2E" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="17" x2="12" y2="21" stroke="#1F3D2E" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;color:#1F3D2E;margin:0 0 8px;">Voice Sessions</h3>
-      <p style="font-size:14.5px;color:#6B6B63;line-height:1.6;margin:0;">Talk it out loud, at your own pace.</p>
-    </div>
-    <div class="card">
-      <div class="icon-box" style="margin-bottom:18px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 5H19V15H10L6 18.5V15H5V5Z" stroke="#1F3D2E" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
-      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;color:#1F3D2E;margin:0 0 8px;">Chat Sessions</h3>
-      <p style="font-size:14.5px;color:#6B6B63;line-height:1.6;margin:0;">Write what's on your mind, whenever it surfaces.</p>
-    </div>
-    <div class="card">
-      <div class="icon-box" style="margin-bottom:18px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3L14.2 9.2L21 9.9L15.8 14.1L17.5 21L12 17.3L6.5 21L8.2 14.1L3 9.9L9.8 9.2Z" stroke="#1F3D2E" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;color:#1F3D2E;margin:0 0 8px;">Premium Listening</h3>
-      <p style="font-size:14.5px;color:#6B6B63;line-height:1.6;margin:0;">Extended, unhurried time with a dedicated listener.</p>
+      <div style="font-size:28px;margin-bottom:14px;">🌟</div>
+      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Long Talk</h3>
+      <p style="font-size:13px;color:#C7A464;font-weight:700;margin:0 0 10px;">1 Hour · Rs. 1,000</p>
+      <p style="font-size:14px;color:#6B6B63;line-height:1.6;margin:0;">Unhurried, deep conversation for when you really need someone in your corner.</p>
     </div>
   </div>
-  <div style="text-align:center;margin-top:36px;">
-    <a href="#services" style="font-size:15px;font-weight:600;color:#1F3D2E;display:inline-flex;align-items:center;gap:6px;">View all services <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#1F3D2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <div style="text-align:center;margin-top:32px;">
+    <a href="#pricing" style="font-size:15px;font-weight:600;color:#1F3D2E;display:inline-flex;align-items:center;gap:6px;">See all pricing details <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#1F3D2E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 
   <!-- How it works preview -->
-  <div style="margin-top:130px;background:#1F3D2E;border-radius:32px;padding:64px clamp(24px,5vw,64px);color:#FAF6EE;">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:48px;">
+  <div style="margin-top:110px;background:#1F3D2E;border-radius:32px;padding:56px clamp(24px,5vw,64px);color:#FAF6EE;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:44px;">
       <div>
         <span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#C7A464;">How it works</span>
-        <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:clamp(26px,3vw,36px);margin:12px 0 0;">Four steps to your first conversation.</h2>
+        <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:clamp(24px,3vw,34px);margin:12px 0 0;">Three steps to your first conversation.</h2>
       </div>
-      <a href="#how-it-works" style="color:#FAF6EE;font-size:15px;font-weight:600;border-bottom:1.5px solid #C7A464;padding-bottom:2px;">See the full process</a>
+      <a href="#how-it-works" style="color:#FAF6EE;font-size:14px;font-weight:600;border-bottom:1.5px solid #C7A464;padding-bottom:2px;">See full process</a>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;">
-      <div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:800;color:#8FA893;margin-bottom:10px;">01</div><h4 style="font-size:16.5px;font-weight:700;margin:0 0 6px;">Book</h4><p style="font-size:14px;color:#C9D3C9;margin:0;line-height:1.6;">Send a message to start.</p></div>
-      <div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:800;color:#8FA893;margin-bottom:10px;">02</div><h4 style="font-size:16.5px;font-weight:700;margin:0 0 6px;">Choose a Time</h4><p style="font-size:14px;color:#C9D3C9;margin:0;line-height:1.6;">Pick a slot, no waitlists.</p></div>
-      <div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:800;color:#8FA893;margin-bottom:10px;">03</div><h4 style="font-size:16.5px;font-weight:700;margin:0 0 6px;">Connect</h4><p style="font-size:14px;color:#C9D3C9;margin:0;line-height:1.6;">No app or account needed.</p></div>
-      <div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:34px;font-weight:800;color:#8FA893;margin-bottom:10px;">04</div><h4 style="font-size:16.5px;font-weight:700;margin:0 0 6px;">Talk Safely</h4><p style="font-size:14px;color:#C9D3C9;margin:0;line-height:1.6;">Speak freely, in confidence.</p></div>
+      <div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:800;color:#8FA893;margin-bottom:10px;">01</div><h4 style="font-size:16px;font-weight:700;margin:0 0 6px;">DM on Instagram</h4><p style="font-size:14px;color:#C9D3C9;margin:0;line-height:1.6;">Send us a message @pause.andtalk</p></div>
+      <div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:800;color:#8FA893;margin-bottom:10px;">02</div><h4 style="font-size:16px;font-weight:700;margin:0 0 6px;">Pick a Package &amp; Time</h4><p style="font-size:14px;color:#C9D3C9;margin:0;line-height:1.6;">Choose your talk length, agree on a slot.</p></div>
+      <div><div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:800;color:#8FA893;margin-bottom:10px;">03</div><h4 style="font-size:16px;font-weight:700;margin:0 0 6px;">Talk Safely</h4><p style="font-size:14px;color:#C9D3C9;margin:0;line-height:1.6;">Speak freely, in full confidence. 🤍</p></div>
     </div>
   </div>
 
   <!-- Benefits -->
-  <div style="margin-top:130px;">
-    <div style="text-align:center;margin-bottom:50px;">
+  <div style="margin-top:110px;">
+    <div style="text-align:center;margin-bottom:48px;">
       <span class="section-label">Why it helps</span>
-      <h2 class="h2" style="font-size:clamp(28px,3.4vw,40px);margin:14px 0 0;">A different kind of support.</h2>
+      <h2 class="h2" style="font-size:clamp(26px,3.4vw,38px);margin:14px 0 0;">A different kind of support.</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px 40px;">
-      <div style="display:flex;gap:16px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M8 5H16C18 5 19 6.5 19 8.5C19 15 12 19 12 19C12 19 5 15 5 8.5C5 6.5 6 5 8 5Z" stroke="#C7A464" stroke-width="1.6"/></svg><div><h4 style="font-size:16.5px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Someone who just listens</h4><p style="font-size:14.5px;color:#6B6B63;line-height:1.6;margin:0;">No advice you didn't ask for, no rushed responses.</p></div></div>
-      <div style="display:flex;gap:16px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><rect x="5" y="11" width="14" height="10" rx="2" stroke="#C7A464" stroke-width="1.6"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="#C7A464" stroke-width="1.6"/></svg><div><h4 style="font-size:16.5px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Complete confidentiality</h4><p style="font-size:14.5px;color:#6B6B63;line-height:1.6;margin:0;">What you share stays between you and your listener.</p></div></div>
-      <div style="display:flex;gap:16px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="8" stroke="#C7A464" stroke-width="1.6"/><path d="M9 15C9.5 13.5 10.6 12.8 12 12.8C13.4 12.8 14.5 13.5 15 15" stroke="#C7A464" stroke-width="1.6" stroke-linecap="round"/><line x1="15" y1="9" x2="15" y2="9" stroke="#C7A464" stroke-width="2" stroke-linecap="round"/><line x1="9" y1="9" x2="9" y2="9" stroke="#C7A464" stroke-width="2" stroke-linecap="round"/></svg><div><h4 style="font-size:16.5px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">No labels, no diagnosis</h4><p style="font-size:14.5px;color:#6B6B63;line-height:1.6;margin:0;">This is companionship, not clinical treatment.</p></div></div>
-      <div style="display:flex;gap:16px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><rect x="4" y="5" width="16" height="15" rx="2" stroke="#C7A464" stroke-width="1.6"/><line x1="4" y1="9" x2="20" y2="9" stroke="#C7A464" stroke-width="1.6"/><path d="M9 13.5L11 15.5L15 11.5" stroke="#C7A464" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><h4 style="font-size:16.5px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">On your schedule</h4><p style="font-size:14.5px;color:#6B6B63;line-height:1.6;margin:0;">Book a session whenever you need one.</p></div></div>
-      <div style="display:flex;gap:16px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><rect x="9" y="3" width="6" height="11" rx="3" stroke="#C7A464" stroke-width="1.6"/><path d="M6 11C6 14.3 8.7 17 12 17C15.3 17 18 14.3 18 11" stroke="#C7A464" stroke-width="1.6" stroke-linecap="round"/></svg><div><h4 style="font-size:16.5px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Voice or text</h4><p style="font-size:14.5px;color:#6B6B63;line-height:1.6;margin:0;">Talk however feels most comfortable.</p></div></div>
-      <div style="display:flex;gap:16px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M12 21C12 21 4 15.5 4 9.8C4 6.6 6.5 4.5 9.2 4.5C10.6 4.5 11.6 5.1 12 6C12.4 5.1 13.4 4.5 14.8 4.5C17.5 4.5 20 6.6 20 9.8C20 15.5 12 21 12 21Z" stroke="#C7A464" stroke-width="1.6"/></svg><div><h4 style="font-size:16.5px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">A judgment-free space</h4><p style="font-size:14.5px;color:#6B6B63;line-height:1.6;margin:0;">Say it exactly as it is.</p></div></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px 40px;">
+      <div style="display:flex;gap:16px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M8 5H16C18 5 19 6.5 19 8.5C19 15 12 19 12 19C12 19 5 15 5 8.5C5 6.5 6 5 8 5Z" stroke="#C7A464" stroke-width="1.6"/></svg><div><h4 style="font-size:16px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Someone who just listens</h4><p style="font-size:14px;color:#6B6B63;line-height:1.6;margin:0;">No advice you didn't ask for, no rushed responses.</p></div></div>
+      <div style="display:flex;gap:16px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><rect x="5" y="11" width="14" height="10" rx="2" stroke="#C7A464" stroke-width="1.6"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="#C7A464" stroke-width="1.6"/></svg><div><h4 style="font-size:16px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Complete confidentiality</h4><p style="font-size:14px;color:#6B6B63;line-height:1.6;margin:0;">What you share stays between you and your listener.</p></div></div>
+      <div style="display:flex;gap:16px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="8" stroke="#C7A464" stroke-width="1.6"/><path d="M9 15C9.5 13.5 10.6 12.8 12 12.8C13.4 12.8 14.5 13.5 15 15" stroke="#C7A464" stroke-width="1.6" stroke-linecap="round"/><line x1="15" y1="9" x2="15" y2="9" stroke="#C7A464" stroke-width="2" stroke-linecap="round"/><line x1="9" y1="9" x2="9" y2="9" stroke="#C7A464" stroke-width="2" stroke-linecap="round"/></svg><div><h4 style="font-size:16px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">No labels, no diagnosis</h4><p style="font-size:14px;color:#6B6B63;line-height:1.6;margin:0;">This is companionship, not clinical treatment.</p></div></div>
+      <div style="display:flex;gap:16px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><rect x="4" y="5" width="16" height="15" rx="2" stroke="#C7A464" stroke-width="1.6"/><line x1="4" y1="9" x2="20" y2="9" stroke="#C7A464" stroke-width="1.6"/><path d="M9 13.5L11 15.5L15 11.5" stroke="#C7A464" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><div><h4 style="font-size:16px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">On your schedule</h4><p style="font-size:14px;color:#6B6B63;line-height:1.6;margin:0;">Book a session whenever you need one.</p></div></div>
+      <div style="display:flex;gap:16px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><rect x="9" y="3" width="6" height="11" rx="3" stroke="#C7A464" stroke-width="1.6"/><path d="M6 11C6 14.3 8.7 17 12 17C15.3 17 18 14.3 18 11" stroke="#C7A464" stroke-width="1.6" stroke-linecap="round"/></svg><div><h4 style="font-size:16px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Voice or text</h4><p style="font-size:14px;color:#6B6B63;line-height:1.6;margin:0;">Talk however feels most comfortable.</p></div></div>
+      <div style="display:flex;gap:16px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M12 21C12 21 4 15.5 4 9.8C4 6.6 6.5 4.5 9.2 4.5C10.6 4.5 11.6 5.1 12 6C12.4 5.1 13.4 4.5 14.8 4.5C17.5 4.5 20 6.6 20 9.8C20 15.5 12 21 12 21Z" stroke="#C7A464" stroke-width="1.6"/></svg><div><h4 style="font-size:16px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">A judgment-free space 🤍</h4><p style="font-size:14px;color:#6B6B63;line-height:1.6;margin:0;">Say it exactly as it is.</p></div></div>
     </div>
   </div>
 
-  <!-- Testimonials -->
-  <div style="margin-top:130px;">
-    <div style="text-align:center;margin-bottom:50px;">
+  <!-- REVIEWS / TESTIMONIALS — temporarily hidden, easy to re-enable -->
+  <!--
+  <div style="margin-top:110px;">
+    <div style="text-align:center;margin-bottom:48px;">
       <span class="section-label">In their words</span>
-      <h2 class="h2" style="font-size:clamp(28px,3.4vw,40px);margin:14px 0 0;">People who've talked with us.</h2>
+      <h2 class="h2" style="font-size:clamp(26px,3.4vw,38px);margin:14px 0 0;">People who've talked with us.</h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
       <div style="background:#FFF;border:1px solid #E4DDC9;border-radius:22px;padding:30px;">
-        <p style="font-size:15.5px;line-height:1.7;color:#2B2B27;margin:0 0 22px;font-style:italic;">"I just needed someone to hear me out without trying to fix anything. That's exactly what I got."</p>
+        <p style="font-size:15px;line-height:1.7;color:#2B2B27;margin:0 0 22px;font-style:italic;">"I just needed someone to hear me out without trying to fix anything. That's exactly what I got."</p>
         <div style="display:flex;align-items:center;gap:12px;">
-          <div class="img-slot" style="width:44px;height:44px;border-radius:50%;flex-shrink:0;font-size:11px;">J.</div>
-          <div><div style="font-size:14px;font-weight:700;color:#1F3D2E;">J.</div><div style="font-size:12.5px;color:#6B6B63;">Session client</div></div>
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#E4EBE1,#C9D4C9);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;color:#8FA893;">J.</div>
+          <div><div style="font-size:14px;font-weight:700;color:#1F3D2E;">J.</div><div style="font-size:12px;color:#6B6B63;">Session client</div></div>
         </div>
       </div>
       <div style="background:#FFF;border:1px solid #E4DDC9;border-radius:22px;padding:30px;">
-        <p style="font-size:15.5px;line-height:1.7;color:#2B2B27;margin:0 0 22px;font-style:italic;">"Having a set time to talk, with no strings attached, made a real difference in my week."</p>
+        <p style="font-size:15px;line-height:1.7;color:#2B2B27;margin:0 0 22px;font-style:italic;">"Having a set time to talk, with no strings attached, made a real difference in my week."</p>
         <div style="display:flex;align-items:center;gap:12px;">
-          <div class="img-slot" style="width:44px;height:44px;border-radius:50%;flex-shrink:0;font-size:11px;">R.</div>
-          <div><div style="font-size:14px;font-weight:700;color:#1F3D2E;">R.</div><div style="font-size:12.5px;color:#6B6B63;">Session client</div></div>
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#E4EBE1,#C9D4C9);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;color:#8FA893;">R.</div>
+          <div><div style="font-size:14px;font-weight:700;color:#1F3D2E;">R.</div><div style="font-size:12px;color:#6B6B63;">Session client</div></div>
         </div>
       </div>
       <div style="background:#FFF;border:1px solid #E4DDC9;border-radius:22px;padding:30px;">
-        <p style="font-size:15.5px;line-height:1.7;color:#2B2B27;margin:0 0 22px;font-style:italic;">"It felt less like an appointment and more like talking to someone who actually cared."</p>
+        <p style="font-size:15px;line-height:1.7;color:#2B2B27;margin:0 0 22px;font-style:italic;">"It felt less like an appointment and more like talking to someone who actually cared."</p>
         <div style="display:flex;align-items:center;gap:12px;">
-          <div class="img-slot" style="width:44px;height:44px;border-radius:50%;flex-shrink:0;font-size:11px;">A.</div>
-          <div><div style="font-size:14px;font-weight:700;color:#1F3D2E;">A.</div><div style="font-size:12.5px;color:#6B6B63;">Session client</div></div>
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#E4EBE1,#C9D4C9);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;color:#8FA893;">A.</div>
+          <div><div style="font-size:14px;font-weight:700;color:#1F3D2E;">A.</div><div style="font-size:12px;color:#6B6B63;">Session client</div></div>
         </div>
       </div>
     </div>
   </div>
+  -->
 
   <!-- FAQ preview -->
-  <div style="margin-top:130px;max-width:760px;margin-left:auto;margin-right:auto;">
-    <div style="text-align:center;margin-bottom:44px;">
+  <div style="margin-top:110px;max-width:720px;margin-left:auto;margin-right:auto;">
+    <div style="text-align:center;margin-bottom:40px;">
       <span class="section-label">Common questions</span>
-      <h2 class="h2" style="font-size:clamp(26px,3vw,36px);margin:14px 0 0;">Before you reach out.</h2>
+      <h2 class="h2" style="font-size:clamp(24px,3vw,34px);margin:14px 0 0;">Before you reach out.</h2>
     </div>
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq('hfaq0')">
-        <span class="faq-q">Is this therapy?</span>
-        <svg class="faq-chevron" id="hfaq0-chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="faq-panel" id="hfaq0"><p style="font-size:14.5px;line-height:1.7;color:#6B6B63;margin:14px 0 0;">No. Pause &amp; Talk offers listening and companionship sessions, not therapy or clinical treatment. We don't diagnose, treat, or provide crisis intervention.</p></div>
+      <button class="faq-btn" onclick="toggleFaq('hfaq0')"><span class="faq-q">Is this therapy?</span><svg class="faq-chevron" id="hfaq0-chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="faq-panel" id="hfaq0"><p style="font-size:14px;line-height:1.7;color:#6B6B63;margin:14px 0 4px;">No. Pause &amp; Talk offers listening and companionship sessions, not therapy or clinical treatment. We don't diagnose, treat, or provide crisis intervention.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq('hfaq1')">
-        <span class="faq-q">Is it really confidential?</span>
-        <svg class="faq-chevron" id="hfaq1-chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="faq-panel" id="hfaq1"><p style="font-size:14.5px;line-height:1.7;color:#6B6B63;margin:14px 0 0;">Yes. Sessions are private and not recorded. What you share stays between you and your listener.</p></div>
+      <button class="faq-btn" onclick="toggleFaq('hfaq1')"><span class="faq-q">Is it really confidential?</span><svg class="faq-chevron" id="hfaq1-chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="faq-panel" id="hfaq1"><p style="font-size:14px;line-height:1.7;color:#6B6B63;margin:14px 0 4px;">Yes. Sessions are private and not recorded. What you share stays between you and your listener.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq('hfaq2')">
-        <span class="faq-q">How do I book?</span>
-        <svg class="faq-chevron" id="hfaq2-chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-      <div class="faq-panel" id="hfaq2"><p style="font-size:14.5px;line-height:1.7;color:#6B6B63;margin:14px 0 0;">Send a message and we'll find a time that works for you. No account or commitment required.</p></div>
+      <button class="faq-btn" onclick="toggleFaq('hfaq2')"><span class="faq-q">How do I book?</span><svg class="faq-chevron" id="hfaq2-chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="faq-panel" id="hfaq2"><p style="font-size:14px;line-height:1.7;color:#6B6B63;margin:14px 0 4px;">Just DM us on Instagram @pause.andtalk — tell us which package you'd like and we'll agree on a time. No forms, no accounts needed.</p></div>
     </div>
   </div>
 
-  <!-- CTA -->
-  <div style="margin-top:130px;text-align:center;background:#E4EBE1;border-radius:32px;padding:72px 32px;">
-    <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);color:#1F3D2E;margin:0 0 16px;letter-spacing:-.01em;">Some things are easier to say out loud.</h2>
-    <p style="font-size:16.5px;color:#4B5A4D;margin:0 0 32px;">Book a session whenever you're ready to talk.</p>
-    <a href="https://wa.me/94776369518?text=Hi%20Pause%20%26%20Talk%2C%20I%27d%20like%20to%20book%20a%20session." target="_blank" class="btn-primary" style="font-size:16px;padding:17px 34px;">Book a Session</a>
+  <!-- CTA banner -->
+  <div style="margin-top:110px;text-align:center;background:#E4EBE1;border-radius:32px;padding:64px 32px;">
+    <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(26px,3.6vw,42px);color:#1F3D2E;margin:0 0 14px;letter-spacing:-.01em;">Some things are easier to say out loud.</h2>
+    <p style="font-size:16px;color:#4B5A4D;margin:0 0 28px;">DM us whenever you're ready to talk. We're here. 🤍</p>
+    <a href="https://ig.me/m/pause.andtalk" target="_blank" class="btn-primary" style="font-size:16px;padding:16px 32px;">📩 DM to Book a Session</a>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" style="padding:110px clamp(24px,6vw,96px);max-width:1200px;margin:0 auto;">
-  <div style="text-align:center;max-width:720px;margin:0 auto 70px;">
+<!-- ══ ABOUT ════════════════════════════════════════════ -->
+<section id="about" style="padding:100px clamp(24px,6vw,96px);max-width:1200px;margin:0 auto;">
+  <div style="text-align:center;max-width:680px;margin:0 auto 64px;">
     <span class="section-label">About Pause &amp; Talk</span>
-    <h2 class="h2" style="font-size:clamp(30px,4vw,44px);margin:16px 0 0;font-weight:800;">Built around one idea: everyone deserves to be heard.</h2>
+    <h2 class="h2" style="font-size:clamp(28px,4vw,42px);margin:16px 0 0;font-weight:800;">Built around one idea: everyone deserves to be heard.</h2>
   </div>
-  <div class="about-grid" style="display:grid;grid-template-columns:minmax(280px,0.9fr) minmax(320px,1.1fr);gap:56px;align-items:center;margin-bottom:110px;">
-    <div class="img-slot" style="width:100%;height:400px;border-radius:26px;">About photo</div>
+  <div class="about-grid" style="display:grid;grid-template-columns:minmax(280px,0.9fr) minmax(320px,1.1fr);gap:56px;align-items:center;margin-bottom:90px;">
+    <img
+      src="https://images.unsplash.com/photo-1780945806713-4bb884acec90?fm=jpg&q=80&w=700&auto=format&fit=crop"
+      alt="Warm, calm conversation"
+      style="width:100%;height:380px;object-fit:cover;border-radius:26px;"
+      loading="lazy"
+    >
     <div>
-      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;color:#1F3D2E;margin:0 0 12px;">Our story</h3>
-      <p style="font-size:15.5px;line-height:1.75;color:#6B6B63;margin:0 0 24px;">Pause &amp; Talk started as a simple observation: most people don't need a solution, they need someone to listen. Not a friend who's too close to the situation, not a professional running the clock on a treatment plan. Just a calm, attentive presence, for exactly as long as they need it.</p>
-      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;color:#1F3D2E;margin:0 0 12px;">Mission</h3>
-      <p style="font-size:15.5px;line-height:1.75;color:#6B6B63;margin:0 0 24px;">To give people a private space to speak freely, without judgment, obligation, or the pressure to be okay.</p>
-      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;color:#1F3D2E;margin:0 0 12px;">Vision</h3>
-      <p style="font-size:15.5px;line-height:1.75;color:#6B6B63;margin:0;">A world where reaching out for a conversation feels as normal as reaching out for anything else.</p>
+      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:21px;font-weight:700;color:#1F3D2E;margin:0 0 12px;">Our story</h3>
+      <p style="font-size:15px;line-height:1.75;color:#6B6B63;margin:0 0 22px;">Pause &amp; Talk started as a simple observation: most people don't need a solution, they need someone to listen. Not a friend who's too close to the situation, not a professional running the clock. Just a calm, attentive presence, for exactly as long as they need it.</p>
+      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:21px;font-weight:700;color:#1F3D2E;margin:0 0 12px;">Mission</h3>
+      <p style="font-size:15px;line-height:1.75;color:#6B6B63;margin:0 0 22px;">To give people a private space to speak freely, without judgment, obligation, or the pressure to be okay.</p>
+      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:21px;font-weight:700;color:#1F3D2E;margin:0 0 12px;">Vision</h3>
+      <p style="font-size:15px;line-height:1.75;color:#6B6B63;margin:0;">A world where reaching out for a conversation feels as normal as reaching out for anything else.</p>
     </div>
   </div>
 
-  <div style="margin-bottom:110px;">
-    <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:700;color:#1F3D2E;text-align:center;margin:0 0 40px;">Why we exist</h3>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
-      <div style="background:#FFF;border:1px solid #E4DDC9;border-radius:20px;padding:26px;"><p style="font-size:15px;line-height:1.65;color:#2B2B27;margin:0;">Not everyone needs therapy, but almost everyone needs to be heard.</p></div>
-      <div style="background:#FFF;border:1px solid #E4DDC9;border-radius:20px;padding:26px;"><p style="font-size:15px;line-height:1.65;color:#2B2B27;margin:0;">Talking to someone impartial can be easier than talking to those closest to us.</p></div>
-      <div style="background:#FFF;border:1px solid #E4DDC9;border-radius:20px;padding:26px;"><p style="font-size:15px;line-height:1.65;color:#2B2B27;margin:0;">Support shouldn't require a diagnosis or a waitlist.</p></div>
+  <div style="margin-bottom:90px;">
+    <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;color:#1F3D2E;text-align:center;margin:0 0 36px;">Why we exist</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
+      <div style="background:#FFF;border:1px solid #E4DDC9;border-radius:20px;padding:24px;"><p style="font-size:14.5px;line-height:1.65;color:#2B2B27;margin:0;">Not everyone needs therapy, but almost everyone needs to be heard.</p></div>
+      <div style="background:#FFF;border:1px solid #E4DDC9;border-radius:20px;padding:24px;"><p style="font-size:14.5px;line-height:1.65;color:#2B2B27;margin:0;">Talking to someone impartial can be easier than talking to those closest to us.</p></div>
+      <div style="background:#FFF;border:1px solid #E4DDC9;border-radius:20px;padding:24px;"><p style="font-size:14.5px;line-height:1.65;color:#2B2B27;margin:0;">Support shouldn't require a diagnosis or a waitlist.</p></div>
     </div>
   </div>
 
-  <div style="margin-bottom:110px;">
-    <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:700;color:#1F3D2E;text-align:center;margin:0 0 40px;">Core values</h3>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;">
-      <div style="text-align:center;padding:20px;">
-        <div class="icon-box" style="width:52px;height:52px;border-radius:14px;margin:0 auto 16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="10" rx="2" stroke="#1F3D2E" stroke-width="1.6"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="#1F3D2E" stroke-width="1.6"/></svg></div>
-        <h4 style="font-size:16.5px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Confidentiality</h4>
-        <p style="font-size:14px;color:#6B6B63;line-height:1.6;margin:0;">What's shared stays private, always.</p>
-      </div>
-      <div style="text-align:center;padding:20px;">
-        <div class="icon-box" style="width:52px;height:52px;border-radius:14px;margin:0 auto 16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21C12 21 4 15.5 4 9.8C4 6.6 6.5 4.5 9.2 4.5C10.6 4.5 11.6 5.1 12 6C12.4 5.1 13.4 4.5 14.8 4.5C17.5 4.5 20 6.6 20 9.8C20 15.5 12 21 12 21Z" stroke="#1F3D2E" stroke-width="1.6"/></svg></div>
-        <h4 style="font-size:16.5px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Warmth</h4>
-        <p style="font-size:14px;color:#6B6B63;line-height:1.6;margin:0;">Every conversation starts with care.</p>
-      </div>
-      <div style="text-align:center;padding:20px;">
-        <div class="icon-box" style="width:52px;height:52px;border-radius:14px;margin:0 auto 16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#1F3D2E" stroke-width="1.6"/><path d="M5 20C5 16 8 14 12 14C16 14 19 16 19 20" stroke="#1F3D2E" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-        <h4 style="font-size:16.5px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Presence</h4>
-        <p style="font-size:14px;color:#6B6B63;line-height:1.6;margin:0;">Full attention, for the whole session.</p>
-      </div>
-      <div style="text-align:center;padding:20px;">
-        <div class="icon-box" style="width:52px;height:52px;border-radius:14px;margin:0 auto 16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5H16C18 5 19 6.5 19 8.5C19 15 12 19 12 19C12 19 5 15 5 8.5C5 6.5 6 5 8 5Z" stroke="#1F3D2E" stroke-width="1.6"/><path d="M9 10L11 12L15 8" stroke="#1F3D2E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h4 style="font-size:16.5px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Respect</h4>
-        <p style="font-size:14px;color:#6B6B63;line-height:1.6;margin:0;">You lead; we follow.</p>
-      </div>
-    </div>
-  </div>
-
-  <div style="background:#1F3D2E;border-radius:28px;padding:56px clamp(24px,4vw,64px);text-align:center;">
-    <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:700;color:#FAF6EE;margin:0 0 16px;">Our safe space commitment</h3>
-    <p style="font-size:15.5px;line-height:1.75;color:#C9D3C9;max-width:640px;margin:0 auto;">Every session is private, unrecorded, and free of judgment. We listen without trying to fix, diagnose, or direct. You lead the conversation.</p>
+  <div style="background:#1F3D2E;border-radius:28px;padding:50px clamp(24px,4vw,64px);text-align:center;">
+    <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;color:#FAF6EE;margin:0 0 14px;">Our safe space commitment</h3>
+    <p style="font-size:15px;line-height:1.75;color:#C9D3C9;max-width:600px;margin:0 auto;">Every session is private, unrecorded, and free of judgment. We listen without trying to fix, diagnose, or direct. You lead the conversation. 🤍</p>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services" style="padding:110px clamp(24px,6vw,96px);max-width:1200px;margin:0 auto;background:#F1E8D6;border-radius:40px;">
-  <div style="text-align:center;max-width:680px;margin:0 auto 60px;">
+<!-- ══ SERVICES ════════════════════════════════════════ -->
+<section id="services" style="padding:100px clamp(24px,6vw,96px);max-width:1200px;margin:0 auto;background:#F1E8D6;border-radius:40px;">
+  <div style="text-align:center;max-width:640px;margin:0 auto 56px;">
     <span style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#A9854A;">Services</span>
-    <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(30px,4vw,44px);color:#1F3D2E;margin:16px 0 14px;letter-spacing:-.01em;">Choose the way you'd like to talk.</h2>
-    <p style="font-size:16px;color:#6B6B63;line-height:1.65;">Every session is private and confidential. Pick the format that feels most comfortable — you can always switch later.</p>
+    <h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(28px,4vw,42px);color:#1F3D2E;margin:16px 0 14px;letter-spacing:-.01em;">Choose the talk that fits.</h2>
+    <p style="font-size:15.5px;color:#6B6B63;line-height:1.65;">All sessions are completely private. Pick the length that feels right — no commitment, no pressure.</p>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px;">
-    <div style="background:#FFF;border-radius:24px;padding:36px;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;">
-        <div class="icon-box" style="width:48px;height:48px;border-radius:13px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#1F3D2E" stroke-width="1.6"/><path d="M5 20C5 16 8 14 12 14C16 14 19 16 19 20" stroke="#1F3D2E" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-        <span style="font-size:12.5px;font-weight:700;color:#A9854A;background:#F1E8D6;padding:6px 12px;border-radius:100px;">45–60 min</span>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;">
+
+    <!-- Friendly Talk -->
+    <div style="background:#FFF;border-radius:24px;padding:34px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+        <div style="font-size:36px;">🌱</div>
+        <span style="font-size:12.5px;font-weight:700;color:#A9854A;background:#F1E8D6;padding:6px 12px;border-radius:100px;">15 min</span>
       </div>
-      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:#1F3D2E;margin:0 0 10px;">Private 1-on-1 Session</h3>
-      <p style="font-size:14.5px;color:#6B6B63;line-height:1.65;margin:0 0 18px;">A dedicated one-on-one conversation with a single listener, from start to finish.</p>
-      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px;">
-        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">Full, undivided attention</span></div>
-        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">Choose voice or text</span></div>
-        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">Same listener throughout</span></div>
+      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:#1F3D2E;margin:0 0 8px;">Friendly Talk</h3>
+      <p style="font-size:14px;font-weight:700;color:#C7A464;margin:0 0 10px;">Rs. 300</p>
+      <p style="font-size:14px;color:#6B6B63;line-height:1.65;margin:0 0 18px;">A quick check-in. Perfect for when you need to vent, decompress, or just feel less alone for a few minutes.</p>
+      <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:22px;">
+        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:13.5px;color:#2B2B27;">One attentive listener</span></div>
+        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:13.5px;color:#2B2B27;">Voice or chat format</span></div>
+        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:13.5px;color:#2B2B27;">Completely private</span></div>
       </div>
-      <a href="https://wa.me/94776369518?text=Hi%20Pause%20%26%20Talk%2C%20I%27d%20like%20to%20book%20a%20session." target="_blank" style="display:block;text-align:center;background:#1F3D2E;color:#FAF6EE;padding:13px;border-radius:100px;font-size:14.5px;font-weight:600;">Book This Session</a>
+      <a href="https://ig.me/m/pause.andtalk" target="_blank" style="display:block;text-align:center;background:#1F3D2E;color:#FAF6EE;padding:12px;border-radius:100px;font-size:14px;font-weight:600;">📩 Book Now</a>
     </div>
-    <div style="background:#FFF;border-radius:24px;padding:36px;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;">
-        <div class="icon-box" style="width:48px;height:48px;border-radius:13px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="9" y="3" width="6" height="11" rx="3" stroke="#1F3D2E" stroke-width="1.6"/><path d="M6 11C6 14.3 8.7 17 12 17C15.3 17 18 14.3 18 11" stroke="#1F3D2E" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-        <span style="font-size:12.5px;font-weight:700;color:#A9854A;background:#F1E8D6;padding:6px 12px;border-radius:100px;">30–60 min</span>
+
+    <!-- Heart Talk (featured) -->
+    <div style="background:#1F3D2E;border-radius:24px;padding:34px;position:relative;">
+      <span style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#C7A464;color:#1F3D2E;font-size:11.5px;font-weight:700;padding:5px 14px;border-radius:100px;white-space:nowrap;">Most Popular 💛</span>
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;margin-top:4px;">
+        <div style="font-size:36px;">💛</div>
+        <span style="font-size:12.5px;font-weight:700;color:#C7A464;background:rgba(199,164,100,.15);padding:6px 12px;border-radius:100px;">30 min</span>
       </div>
-      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:#1F3D2E;margin:0 0 10px;">Voice Session</h3>
-      <p style="font-size:14.5px;color:#6B6B63;line-height:1.65;margin:0 0 18px;">Talk it through out loud. Sometimes hearing your own thoughts spoken is enough to make sense of them.</p>
-      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px;">
-        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">Real-time conversation</span></div>
-        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">No cameras, ever</span></div>
-        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">Speak as freely as you need</span></div>
+      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:#FAF6EE;margin:0 0 8px;">Heart Talk</h3>
+      <p style="font-size:14px;font-weight:700;color:#C7A464;margin:0 0 10px;">Rs. 500</p>
+      <p style="font-size:14px;color:#C9D3C9;line-height:1.65;margin:0 0 18px;">A fuller conversation. More space to open up, reflect, and feel genuinely heard without any rush.</p>
+      <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:22px;">
+        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#C7A464" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:13.5px;color:#FAF6EE;">Full, undivided attention</span></div>
+        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#C7A464" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:13.5px;color:#FAF6EE;">Voice or chat — your choice</span></div>
+        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#C7A464" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:13.5px;color:#FAF6EE;">No judgment, ever</span></div>
       </div>
-      <a href="https://wa.me/94776369518?text=Hi%20Pause%20%26%20Talk%2C%20I%27d%20like%20to%20book%20a%20session." target="_blank" style="display:block;text-align:center;background:#1F3D2E;color:#FAF6EE;padding:13px;border-radius:100px;font-size:14.5px;font-weight:600;">Book This Session</a>
+      <a href="https://ig.me/m/pause.andtalk" target="_blank" style="display:block;text-align:center;background:#C7A464;color:#1F3D2E;padding:12px;border-radius:100px;font-size:14px;font-weight:700;">📩 Book Now</a>
     </div>
-    <div style="background:#FFF;border-radius:24px;padding:36px;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;">
-        <div class="icon-box" style="width:48px;height:48px;border-radius:13px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 5H19V15H10L6 18.5V15H5V5Z" stroke="#1F3D2E" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
-        <span style="font-size:12.5px;font-weight:700;color:#A9854A;background:#F1E8D6;padding:6px 12px;border-radius:100px;">Flexible</span>
+
+    <!-- Long Talk -->
+    <div style="background:#FFF;border-radius:24px;padding:34px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+        <div style="font-size:36px;">🌟</div>
+        <span style="font-size:12.5px;font-weight:700;color:#A9854A;background:#F1E8D6;padding:6px 12px;border-radius:100px;">1 hour</span>
       </div>
-      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:#1F3D2E;margin:0 0 10px;">Chat Session</h3>
-      <p style="font-size:14.5px;color:#6B6B63;line-height:1.65;margin:0 0 18px;">Write at your own pace. Good for late nights, quiet moments, or when speaking out loud feels like too much.</p>
-      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px;">
-        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">Respond whenever you're ready</span></div>
-        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">No pressure to reply instantly</span></div>
-        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">A written record only you can see</span></div>
+      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:#1F3D2E;margin:0 0 8px;">Long Talk</h3>
+      <p style="font-size:14px;font-weight:700;color:#C7A464;margin:0 0 10px;">Rs. 1,000</p>
+      <p style="font-size:14px;color:#6B6B63;line-height:1.65;margin:0 0 18px;">Unhurried, deep conversation for when you really need someone in your corner — no clock-watching.</p>
+      <div style="display:flex;flex-direction:column;gap:9px;margin-bottom:22px;">
+        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:13.5px;color:#2B2B27;">Longer, uninterrupted time</span></div>
+        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:13.5px;color:#2B2B27;">Ideal for deeper topics</span></div>
+        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:13.5px;color:#2B2B27;">Voice or chat</span></div>
       </div>
-      <a href="https://wa.me/94776369518?text=Hi%20Pause%20%26%20Talk%2C%20I%27d%20like%20to%20book%20a%20session." target="_blank" style="display:block;text-align:center;background:#1F3D2E;color:#FAF6EE;padding:13px;border-radius:100px;font-size:14.5px;font-weight:600;">Book This Session</a>
-    </div>
-    <div style="background:#FFF;border-radius:24px;padding:36px;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;">
-        <div class="icon-box" style="width:48px;height:48px;border-radius:13px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3L14.2 9.2L21 9.9L15.8 14.1L17.5 21L12 17.3L6.5 21L8.2 14.1L3 9.9L9.8 9.2Z" stroke="#1F3D2E" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
-        <span style="font-size:12.5px;font-weight:700;color:#A9854A;background:#F1E8D6;padding:6px 12px;border-radius:100px;">90 min</span>
-      </div>
-      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:#1F3D2E;margin:0 0 10px;">Premium Listening Session</h3>
-      <p style="font-size:14.5px;color:#6B6B63;line-height:1.65;margin:0 0 18px;">Extended, unhurried time for deeper conversations that need more room to breathe.</p>
-      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:22px;">
-        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">Longer, uninterrupted time</span></div>
-        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">Priority scheduling</span></div>
-        <div style="display:flex;gap:8px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">Ideal for heavier topics</span></div>
-      </div>
-      <a href="https://wa.me/94776369518?text=Hi%20Pause%20%26%20Talk%2C%20I%27d%20like%20to%20book%20a%20session." target="_blank" style="display:block;text-align:center;background:#1F3D2E;color:#FAF6EE;padding:13px;border-radius:100px;font-size:14.5px;font-weight:600;">Book This Session</a>
+      <a href="https://ig.me/m/pause.andtalk" target="_blank" style="display:block;text-align:center;background:#1F3D2E;color:#FAF6EE;padding:12px;border-radius:100px;font-size:14px;font-weight:600;">📩 Book Now</a>
     </div>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:50px;">
-    <div style="background:#FFF;border-radius:22px;padding:30px;"><h4 style="font-size:16.5px;font-weight:700;color:#1F3D2E;margin:0 0 10px;">Booking process</h4><p style="font-size:14.5px;line-height:1.7;color:#6B6B63;margin:0;">Every session is booked directly — send a message, choose a time, and connect at the agreed hour. No accounts, no long forms.</p></div>
-    <div style="background:#FFF;border-radius:22px;padding:30px;"><h4 style="font-size:16.5px;font-weight:700;color:#1F3D2E;margin:0 0 10px;">Confidentiality</h4><p style="font-size:14.5px;line-height:1.7;color:#6B6B63;margin:0;">Nothing said in a session is recorded, shared, or stored beyond what's needed to schedule it.</p></div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:44px;">
+    <div style="background:#FFF;border-radius:20px;padding:26px;"><h4 style="font-size:16px;font-weight:700;color:#1F3D2E;margin:0 0 8px;">How to book</h4><p style="font-size:14px;line-height:1.7;color:#6B6B63;margin:0;">DM us on Instagram @pause.andtalk — tell us which package you'd like and we'll agree on a time. Simple as that.</p></div>
+    <div style="background:#FFF;border-radius:20px;padding:26px;"><h4 style="font-size:16px;font-weight:700;color:#1F3D2E;margin:0 0 8px;">Confidentiality</h4><p style="font-size:14px;line-height:1.7;color:#6B6B63;margin:0;">Nothing said in a session is recorded, shared, or stored. What's yours stays yours.</p></div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section id="pricing" style="padding:110px clamp(24px,6vw,96px);max-width:1200px;margin:0 auto;">
-  <div style="text-align:center;max-width:640px;margin:0 auto 60px;">
+<!-- ══ PRICING ══════════════════════════════════════════ -->
+<section id="pricing" style="padding:100px clamp(24px,6vw,96px);max-width:1100px;margin:0 auto;">
+  <div style="text-align:center;max-width:580px;margin:0 auto 56px;">
     <span class="section-label">Pricing</span>
-    <h2 class="h2" style="font-size:clamp(30px,4vw,44px);margin:16px 0 14px;font-weight:800;">Simple, honest pricing.</h2>
-    <p style="font-size:16px;color:#6B6B63;line-height:1.65;">Session rates are confirmed directly when you book, since formats and lengths vary. Here's what to expect.</p>
+    <h2 class="h2" style="font-size:clamp(28px,4vw,42px);margin:16px 0 14px;font-weight:800;">Simple, honest pricing.</h2>
+    <p style="font-size:15.5px;color:#6B6B63;line-height:1.65;">No hidden charges, no commitments. Pay only for the time you book.</p>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;align-items:stretch;">
-    <div style="background:#FFF;border:1px solid #E4DDC9;border-radius:26px;padding:38px 32px;display:flex;flex-direction:column;">
-      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Single Session</h3>
-      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:38px;font-weight:800;color:#1F3D2E;margin:14px 0 4px;">$— <span style="font-size:14px;font-weight:500;color:#6B6B63;">/ session</span></div>
-      <p style="font-size:13.5px;color:#6B6B63;margin:0 0 26px;">Confirmed at booking</p>
-      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:30px;flex-grow:1;">
-        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14.5px;color:#2B2B27;">One 45–60 min session</span></div>
-        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14.5px;color:#2B2B27;">Voice or chat</span></div>
-        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14.5px;color:#2B2B27;">Free rescheduling once</span></div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px;align-items:stretch;">
+
+    <!-- Friendly Talk -->
+    <div style="background:#FFF;border:1px solid #E4DDC9;border-radius:26px;padding:36px 30px;display:flex;flex-direction:column;">
+      <div style="font-size:32px;margin-bottom:12px;">🌱</div>
+      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Friendly Talk</h3>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:40px;font-weight:800;color:#1F3D2E;margin:12px 0 4px;">Rs. 300</div>
+      <p style="font-size:13px;color:#6B6B63;margin:0 0 24px;">⏳ 15 minutes</p>
+      <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:28px;flex-grow:1;">
+        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">One-on-one private session</span></div>
+        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">Voice or chat</span></div>
+        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">No recordings</span></div>
       </div>
-      <a href="https://wa.me/94776369518?text=Hi%20Pause%20%26%20Talk%2C%20I%27d%20like%20to%20book%20a%20session." target="_blank" style="text-align:center;border:1.5px solid #1F3D2E;color:#1F3D2E;padding:13px;border-radius:100px;font-size:14.5px;font-weight:600;display:block;">Book a Session</a>
+      <a href="https://ig.me/m/pause.andtalk" target="_blank" style="text-align:center;border:1.5px solid #1F3D2E;color:#1F3D2E;padding:12px;border-radius:100px;font-size:14px;font-weight:600;display:block;">📩 Book This</a>
     </div>
-    <div style="background:#1F3D2E;border-radius:26px;padding:38px 32px;display:flex;flex-direction:column;position:relative;">
-      <span style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#C7A464;color:#1F3D2E;font-size:12px;font-weight:700;padding:6px 16px;border-radius:100px;white-space:nowrap;">Most Popular</span>
-      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:700;color:#FAF6EE;margin:8px 0 6px;">Session Package</h3>
-      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:38px;font-weight:800;color:#FAF6EE;margin:14px 0 4px;">$— <span style="font-size:14px;font-weight:500;color:#C9D3C9;">/ 4 sessions</span></div>
-      <p style="font-size:13.5px;color:#C9D3C9;margin:0 0 26px;">Confirmed at booking</p>
-      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:30px;flex-grow:1;">
-        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#C7A464" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14.5px;color:#FAF6EE;">Four sessions, use within 2 months</span></div>
-        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#C7A464" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14.5px;color:#FAF6EE;">Priority time slots</span></div>
-        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#C7A464" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14.5px;color:#FAF6EE;">Mix voice &amp; chat freely</span></div>
+
+    <!-- Heart Talk (featured) -->
+    <div style="background:#1F3D2E;border-radius:26px;padding:36px 30px;display:flex;flex-direction:column;position:relative;">
+      <span style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#C7A464;color:#1F3D2E;font-size:11.5px;font-weight:700;padding:5px 14px;border-radius:100px;white-space:nowrap;">Most Popular 💛</span>
+      <div style="font-size:32px;margin-bottom:12px;margin-top:4px;">💛</div>
+      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:700;color:#FAF6EE;margin:0 0 6px;">Heart Talk</h3>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:40px;font-weight:800;color:#FAF6EE;margin:12px 0 4px;">Rs. 500</div>
+      <p style="font-size:13px;color:#C9D3C9;margin:0 0 24px;">⏳ 30 minutes</p>
+      <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:28px;flex-grow:1;">
+        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#C7A464" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#FAF6EE;">One-on-one private session</span></div>
+        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#C7A464" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#FAF6EE;">Voice or chat</span></div>
+        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#C7A464" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#FAF6EE;">No recordings</span></div>
+        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#C7A464" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#FAF6EE;">More space to open up</span></div>
       </div>
-      <a href="https://wa.me/94776369518?text=Hi%20Pause%20%26%20Talk%2C%20I%27d%20like%20to%20book%20a%20session." target="_blank" style="text-align:center;background:#C7A464;color:#1F3D2E;padding:13px;border-radius:100px;font-size:14.5px;font-weight:700;display:block;">Get the Package</a>
+      <a href="https://ig.me/m/pause.andtalk" target="_blank" style="text-align:center;background:#C7A464;color:#1F3D2E;padding:12px;border-radius:100px;font-size:14px;font-weight:700;display:block;">📩 Book This</a>
     </div>
-    <div style="background:#FFF;border:1px solid #E4DDC9;border-radius:26px;padding:38px 32px;display:flex;flex-direction:column;">
-      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Premium Listening</h3>
-      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:38px;font-weight:800;color:#1F3D2E;margin:14px 0 4px;">$— <span style="font-size:14px;font-weight:500;color:#6B6B63;">/ session</span></div>
-      <p style="font-size:13.5px;color:#6B6B63;margin:0 0 26px;">Confirmed at booking</p>
-      <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:30px;flex-grow:1;">
-        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14.5px;color:#2B2B27;">90-minute extended session</span></div>
-        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14.5px;color:#2B2B27;">Priority scheduling</span></div>
-        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14.5px;color:#2B2B27;">Ideal for deeper conversations</span></div>
+
+    <!-- Long Talk -->
+    <div style="background:#FFF;border:1px solid #E4DDC9;border-radius:26px;padding:36px 30px;display:flex;flex-direction:column;">
+      <div style="font-size:32px;margin-bottom:12px;">🌟</div>
+      <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:700;color:#1F3D2E;margin:0 0 6px;">Long Talk</h3>
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:40px;font-weight:800;color:#1F3D2E;margin:12px 0 4px;">Rs. 1,000</div>
+      <p style="font-size:13px;color:#6B6B63;margin:0 0 24px;">⏳ 1 hour</p>
+      <div style="display:flex;flex-direction:column;gap:11px;margin-bottom:28px;flex-grow:1;">
+        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">One-on-one private session</span></div>
+        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">Voice or chat</span></div>
+        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">No recordings</span></div>
+        <div style="display:flex;gap:9px;align-items:flex-start;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:2px;"><path d="M5 13l4 4L19 7" stroke="#8FA893" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span style="font-size:14px;color:#2B2B27;">Full hour, no rush</span></div>
       </div>
-      <a href="https://wa.me/94776369518?text=Hi%20Pause%20%26%20Talk%2C%20I%27d%20like%20to%20book%20a%20session." target="_blank" style="text-align:center;border:1.5px solid #1F3D2E;color:#1F3D2E;padding:13px;border-radius:100px;font-size:14.5px;font-weight:600;display:block;">Book Premium</a>
+      <a href="https://ig.me/m/pause.andtalk" target="_blank" style="text-align:center;border:1.5px solid #1F3D2E;color:#1F3D2E;padding:12px;border-radius:100px;font-size:14px;font-weight:600;display:block;">📩 Book This</a>
     </div>
   </div>
-  <p style="text-align:center;font-size:13.5px;color:#6B6B63;margin:28px 0 0;">Exact rates are shared when you reach out — pricing depends on session length and format.</p>
-  <div style="margin-top:60px;background:#F1E8D6;border-radius:24px;padding:36px 32px;text-align:center;">
-    <p style="font-size:14.5px;color:#4B5A4D;margin:0;line-height:1.8;">All plans include: full confidentiality &nbsp;·&nbsp; no recordings &nbsp;·&nbsp; cancel or reschedule up to 24 hours ahead &nbsp;·&nbsp; judgment-free, always</p>
+
+  <div style="margin-top:48px;background:#F1E8D6;border-radius:22px;padding:30px 28px;text-align:center;">
+    <p style="font-size:14px;color:#4B5A4D;margin:0;line-height:1.8;">All sessions include: full confidentiality &nbsp;·&nbsp; no recordings &nbsp;·&nbsp; zero judgment &nbsp;·&nbsp; cancel or reschedule via DM</p>
   </div>
-  <div style="margin-top:90px;max-width:760px;margin-left:auto;margin-right:auto;">
-    <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:24px;font-weight:700;color:#1F3D2E;text-align:center;margin:0 0 36px;">Pricing questions</h3>
+
+  <!-- Pricing FAQ -->
+  <div style="margin-top:80px;max-width:720px;margin-left:auto;margin-right:auto;">
+    <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:22px;font-weight:700;color:#1F3D2E;text-align:center;margin:0 0 32px;">Pricing questions</h3>
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq('pfaq0')"><span class="faq-q">Why aren't exact prices listed?</span><svg class="faq-chevron" id="pfaq0-chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="faq-panel" id="pfaq0"><p style="font-size:14.5px;line-height:1.7;color:#6B6B63;margin:14px 0 0;">Session pricing depends on format and length, so we confirm the exact rate when you book — no surprises, no hidden fees.</p></div>
+      <button class="faq-btn" onclick="toggleFaq('pfaq0')"><span class="faq-q">How do I pay?</span><svg class="faq-chevron" id="pfaq0-chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="faq-panel" id="pfaq0"><p style="font-size:14px;line-height:1.7;color:#6B6B63;margin:14px 0 4px;">Payment details are shared when you DM to book. We keep it simple and straightforward.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq('pfaq1')"><span class="faq-q">What payment methods do you accept?</span><svg class="faq-chevron" id="pfaq1-chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="faq-panel" id="pfaq1"><p style="font-size:14.5px;line-height:1.7;color:#6B6B63;margin:14px 0 0;">Details are shared during booking.</p></div>
+      <button class="faq-btn" onclick="toggleFaq('pfaq1')"><span class="faq-q">Can I cancel or reschedule?</span><svg class="faq-chevron" id="pfaq1-chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="faq-panel" id="pfaq1"><p style="font-size:14px;line-height:1.7;color:#6B6B63;margin:14px 0 4px;">Yes — just DM us. We'll sort it out together with no hassle.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq('pfaq2')"><span class="faq-q">Can I cancel or reschedule?</span><svg class="faq-chevron" id="pfaq2-chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="faq-panel" id="pfaq2"><p style="font-size:14.5px;line-height:1.7;color:#6B6B63;margin:14px 0 0;">Yes, up to 24 hours before your session at no charge.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq('pfaq3')"><span class="faq-q">Do you offer refunds?</span><svg class="faq-chevron" id="pfaq3-chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="faq-panel" id="pfaq3"><p style="font-size:14.5px;line-height:1.7;color:#6B6B63;margin:14px 0 0;">Reach out and we'll work it out directly — every situation is different.</p></div>
+      <button class="faq-btn" onclick="toggleFaq('pfaq2')"><span class="faq-q">Do you offer refunds?</span><svg class="faq-chevron" id="pfaq2-chev" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="faq-panel" id="pfaq2"><p style="font-size:14px;line-height:1.7;color:#6B6B63;margin:14px 0 4px;">Reach out and we'll work it out — every situation is different and we'll treat it that way.</p></div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section id="how-it-works" style="padding:110px clamp(24px,6vw,96px);max-width:900px;margin:0 auto;">
-  <div style="text-align:center;margin-bottom:70px;">
+<!-- ══ HOW IT WORKS ═══════════════════════════════════ -->
+<section id="how-it-works" style="padding:100px clamp(24px,6vw,96px);max-width:860px;margin:0 auto;">
+  <div style="text-align:center;margin-bottom:64px;">
     <span class="section-label">How it works</span>
-    <h2 class="h2" style="font-size:clamp(30px,4vw,44px);margin:16px 0 0;font-weight:800;">Five simple steps to your first conversation.</h2>
+    <h2 class="h2" style="font-size:clamp(28px,4vw,42px);margin:16px 0 0;font-weight:800;">Three simple steps to your first conversation.</h2>
   </div>
   <div style="position:relative;padding-left:56px;">
     <div style="position:absolute;left:19px;top:6px;bottom:6px;width:2px;background:#E4DDC9;"></div>
-    <div style="position:relative;margin-bottom:52px;">
+    <div style="position:relative;margin-bottom:50px;">
       <div style="position:absolute;left:-56px;top:0;width:40px;height:40px;border-radius:50%;background:#1F3D2E;color:#FAF6EE;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;">1</div>
-      <h4 style="font-size:19px;font-weight:700;color:#1F3D2E;margin:2px 0 8px;">Book</h4>
-      <p style="font-size:15px;color:#6B6B63;line-height:1.7;margin:0;">Send a message on WhatsApp or Instagram to start.</p>
+      <h4 style="font-size:18px;font-weight:700;color:#1F3D2E;margin:2px 0 8px;">DM Us on Instagram</h4>
+      <p style="font-size:14.5px;color:#6B6B63;line-height:1.7;margin:0;">Send us a message at <a href="https://www.instagram.com/pause.andtalk/" target="_blank" style="color:#1F3D2E;font-weight:600;">@pause.andtalk</a> — tell us which package you'd like.</p>
     </div>
-    <div style="position:relative;margin-bottom:52px;">
+    <div style="position:relative;margin-bottom:50px;">
       <div style="position:absolute;left:-56px;top:0;width:40px;height:40px;border-radius:50%;background:#1F3D2E;color:#FAF6EE;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;">2</div>
-      <h4 style="font-size:19px;font-weight:700;color:#1F3D2E;margin:2px 0 8px;">Choose a Time</h4>
-      <p style="font-size:15px;color:#6B6B63;line-height:1.7;margin:0;">Pick a slot that works for your schedule, no waitlists.</p>
+      <h4 style="font-size:18px;font-weight:700;color:#1F3D2E;margin:2px 0 8px;">Pick a Time</h4>
+      <p style="font-size:14.5px;color:#6B6B63;line-height:1.7;margin:0;">We'll agree on a slot that works for you. No waitlists, no long waits.</p>
     </div>
-    <div style="position:relative;margin-bottom:52px;">
+    <div style="position:relative;margin-bottom:50px;">
       <div style="position:absolute;left:-56px;top:0;width:40px;height:40px;border-radius:50%;background:#1F3D2E;color:#FAF6EE;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;">3</div>
-      <h4 style="font-size:19px;font-weight:700;color:#1F3D2E;margin:2px 0 8px;">Connect</h4>
-      <p style="font-size:15px;color:#6B6B63;line-height:1.7;margin:0;">Join at the agreed time — no app to download, no account to create.</p>
-    </div>
-    <div style="position:relative;margin-bottom:52px;">
-      <div style="position:absolute;left:-56px;top:0;width:40px;height:40px;border-radius:50%;background:#1F3D2E;color:#FAF6EE;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;">4</div>
-      <h4 style="font-size:19px;font-weight:700;color:#1F3D2E;margin:2px 0 8px;">Talk Safely</h4>
-      <p style="font-size:15px;color:#6B6B63;line-height:1.7;margin:0;">Speak freely in a private, unrecorded conversation.</p>
+      <h4 style="font-size:18px;font-weight:700;color:#1F3D2E;margin:2px 0 8px;">Connect &amp; Talk Freely</h4>
+      <p style="font-size:14.5px;color:#6B6B63;line-height:1.7;margin:0;">Join at the agreed time. No app needed, no account to create — just show up and talk.</p>
     </div>
     <div style="position:relative;">
-      <div style="position:absolute;left:-56px;top:0;width:40px;height:40px;border-radius:50%;background:#1F3D2E;color:#FAF6EE;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;">5</div>
-      <h4 style="font-size:19px;font-weight:700;color:#1F3D2E;margin:2px 0 8px;">Follow-Up</h4>
-      <p style="font-size:15px;color:#6B6B63;line-height:1.7;margin:0;">After your session, book another whenever you'd like — there's no obligation to continue.</p>
+      <div style="position:absolute;left:-56px;top:0;width:40px;height:40px;border-radius:50%;background:#8FA893;color:#FAF6EE;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;">4</div>
+      <h4 style="font-size:18px;font-weight:700;color:#1F3D2E;margin:2px 0 8px;">Come Back Anytime</h4>
+      <p style="font-size:14.5px;color:#6B6B63;line-height:1.7;margin:0;">Book again whenever you'd like. No obligation, no pressure — we're here when you need us. 🤍</p>
     </div>
   </div>
-  <p style="text-align:center;font-size:14.5px;color:#6B6B63;margin-top:56px;">That's it. No intake forms, no lengthy assessments — just a conversation when you need one.</p>
+  <p style="text-align:center;font-size:14px;color:#6B6B63;margin-top:52px;">No intake forms, no lengthy assessments — just a conversation when you need one.</p>
 </section>
 
-<!-- PRIVACY -->
-<section id="privacy" style="padding:110px clamp(24px,6vw,96px);max-width:1100px;margin:0 auto;">
-  <div style="text-align:center;max-width:680px;margin:0 auto 70px;">
+<!-- ══ PRIVACY ══════════════════════════════════════════ -->
+<section id="privacy" style="padding:100px clamp(24px,6vw,96px);max-width:1100px;margin:0 auto;">
+  <div style="text-align:center;max-width:640px;margin:0 auto 64px;">
     <span class="section-label">Privacy &amp; Trust</span>
-    <h2 class="h2" style="font-size:clamp(30px,4vw,44px);margin:16px 0 0;font-weight:800;">Your privacy is the foundation, not an afterthought.</h2>
+    <h2 class="h2" style="font-size:clamp(28px,4vw,42px);margin:16px 0 0;font-weight:800;">Your privacy is the foundation, not an afterthought.</h2>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-bottom:56px;">
-    <div class="card" style="border-radius:22px;padding:30px;">
-      <div class="icon-box" style="margin-bottom:16px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="10" rx="2" stroke="#1F3D2E" stroke-width="1.6"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="#1F3D2E" stroke-width="1.6"/></svg></div>
-      <h4 style="font-size:17px;font-weight:700;color:#1F3D2E;margin:0 0 10px;">Privacy commitment</h4>
-      <p style="font-size:14.5px;color:#6B6B63;line-height:1.7;margin:0;">Every conversation is private. We never share what you tell us with anyone, for any reason, without your explicit consent.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:48px;">
+    <div class="card" style="border-radius:22px;padding:28px;">
+      <div class="icon-box" style="margin-bottom:14px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="10" rx="2" stroke="#1F3D2E" stroke-width="1.6"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke="#1F3D2E" stroke-width="1.6"/></svg></div>
+      <h4 style="font-size:16px;font-weight:700;color:#1F3D2E;margin:0 0 8px;">Privacy commitment</h4>
+      <p style="font-size:14px;color:#6B6B63;line-height:1.7;margin:0;">Every conversation is private. We never share what you tell us with anyone, for any reason, without your explicit consent.</p>
     </div>
-    <div class="card" style="border-radius:22px;padding:30px;">
-      <div class="icon-box" style="margin-bottom:16px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 5H16C18 5 19 6.5 19 8.5C19 15 12 19 12 19C12 19 5 15 5 8.5C5 6.5 6 5 8 5Z" stroke="#1F3D2E" stroke-width="1.6"/></svg></div>
-      <h4 style="font-size:17px;font-weight:700;color:#1F3D2E;margin:0 0 10px;">Confidentiality</h4>
-      <p style="font-size:14.5px;color:#6B6B63;line-height:1.7;margin:0;">Sessions aren't therapy, but we hold them to the same standard of discretion. What's said in a session stays there.</p>
+    <div class="card" style="border-radius:22px;padding:28px;">
+      <div class="icon-box" style="margin-bottom:14px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 5H16C18 5 19 6.5 19 8.5C19 15 12 19 12 19C12 19 5 15 5 8.5C5 6.5 6 5 8 5Z" stroke="#1F3D2E" stroke-width="1.6"/></svg></div>
+      <h4 style="font-size:16px;font-weight:700;color:#1F3D2E;margin:0 0 8px;">Confidentiality</h4>
+      <p style="font-size:14px;color:#6B6B63;line-height:1.7;margin:0;">What's said in a session stays there. We hold every conversation to the highest standard of discretion.</p>
     </div>
-    <div class="card" style="border-radius:22px;padding:30px;">
-      <div class="icon-box" style="margin-bottom:16px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#1F3D2E" stroke-width="1.6"/><path d="M8 12H16M8 16H13" stroke="#1F3D2E" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-      <h4 style="font-size:17px;font-weight:700;color:#1F3D2E;margin:0 0 10px;">Data handling</h4>
-      <p style="font-size:14.5px;color:#6B6B63;line-height:1.7;margin:0;">We collect only what's needed to schedule and run a session — your contact details and preferred times. We don't sell or share your data with third parties.</p>
+    <div class="card" style="border-radius:22px;padding:28px;">
+      <div class="icon-box" style="margin-bottom:14px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="#1F3D2E" stroke-width="1.6"/><path d="M8 12H16M8 16H13" stroke="#1F3D2E" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+      <h4 style="font-size:16px;font-weight:700;color:#1F3D2E;margin:0 0 8px;">Data handling</h4>
+      <p style="font-size:14px;color:#6B6B63;line-height:1.7;margin:0;">We collect only what's needed to schedule a session. We don't sell or share your data with anyone.</p>
     </div>
-    <div class="card" style="border-radius:22px;padding:30px;">
-      <div class="icon-box" style="margin-bottom:16px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="9" y="3" width="6" height="11" rx="3" stroke="#1F3D2E" stroke-width="1.6"/><path d="M6 11C6 14.3 8.7 17 12 17C15.3 17 18 14.3 18 11" stroke="#1F3D2E" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-      <h4 style="font-size:17px;font-weight:700;color:#1F3D2E;margin:0 0 10px;">Safe conversations</h4>
-      <p style="font-size:14.5px;color:#6B6B63;line-height:1.7;margin:0;">Sessions are never recorded. There's no transcript, no audio file, and no chat log kept beyond what's needed to remember context you've asked us to.</p>
+    <div class="card" style="border-radius:22px;padding:28px;">
+      <div class="icon-box" style="margin-bottom:14px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="9" y="3" width="6" height="11" rx="3" stroke="#1F3D2E" stroke-width="1.6"/><path d="M6 11C6 14.3 8.7 17 12 17C15.3 17 18 14.3 18 11" stroke="#1F3D2E" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+      <h4 style="font-size:16px;font-weight:700;color:#1F3D2E;margin:0 0 8px;">No recordings</h4>
+      <p style="font-size:14px;color:#6B6B63;line-height:1.7;margin:0;">Sessions are never recorded. There's no transcript, no audio file, no chat log stored anywhere.</p>
     </div>
-    <div class="card" style="border-radius:22px;padding:30px;">
-      <div class="icon-box" style="margin-bottom:16px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3L19 6V11C19 15.5 16 19 12 21C8 19 5 15.5 5 11V6L12 3Z" stroke="#1F3D2E" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
-      <h4 style="font-size:17px;font-weight:700;color:#1F3D2E;margin:0 0 10px;">Code of ethics</h4>
-      <p style="font-size:14.5px;color:#6B6B63;line-height:1.7;margin:0;">We listen without judgment. We don't diagnose or treat. We refer out when something is beyond our scope. We respect boundaries, always.</p>
+    <div class="card" style="border-radius:22px;padding:28px;">
+      <div class="icon-box" style="margin-bottom:14px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3L19 6V11C19 15.5 16 19 12 21C8 19 5 15.5 5 11V6L12 3Z" stroke="#1F3D2E" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+      <h4 style="font-size:16px;font-weight:700;color:#1F3D2E;margin:0 0 8px;">Code of ethics</h4>
+      <p style="font-size:14px;color:#6B6B63;line-height:1.7;margin:0;">We listen without judgment. We don't diagnose or treat. We respect your boundaries, always.</p>
     </div>
   </div>
-  <div style="background:#F1E8D6;border-left:4px solid #C7A464;border-radius:16px;padding:28px 32px;">
-    <p style="font-size:14.5px;line-height:1.75;color:#4B5A4D;margin:0;"><strong style="color:#1F3D2E;">Important:</strong> Pause &amp; Talk is a listening and companionship service — not therapy, counseling, or crisis intervention. If you're in crisis or thinking about harming yourself, please contact your local emergency number or a crisis helpline immediately.</p>
+  <div style="background:#F1E8D6;border-left:4px solid #C7A464;border-radius:14px;padding:24px 28px;">
+    <p style="font-size:14px;line-height:1.75;color:#4B5A4D;margin:0;"><strong style="color:#1F3D2E;">Important:</strong> Pause &amp; Talk is a listening and companionship service — not therapy, counseling, or crisis intervention. If you're in crisis or need urgent support, please contact your local emergency number or a crisis helpline immediately.</p>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" style="padding:110px clamp(24px,6vw,96px);max-width:1200px;margin:0 auto;">
-  <div style="text-align:center;max-width:640px;margin:0 auto 60px;">
+<!-- ══ CONTACT ══════════════════════════════════════════ -->
+<section id="contact" style="padding:100px clamp(24px,6vw,96px);max-width:1100px;margin:0 auto;">
+  <div style="text-align:center;max-width:580px;margin:0 auto 56px;">
     <span class="section-label">Contact</span>
-    <h2 class="h2" style="font-size:clamp(30px,4vw,44px);margin:16px 0 0;font-weight:800;">Ready to talk? Reach out.</h2>
+    <h2 class="h2" style="font-size:clamp(28px,4vw,42px);margin:16px 0 0;font-weight:800;">Ready to talk? Reach out. 🤍</h2>
   </div>
-  <div class="contact-grid" style="display:grid;grid-template-columns:minmax(320px,1.15fr) minmax(280px,.85fr);gap:40px;align-items:start;">
-    <div style="background:#FFF;border:1px solid #E4DDC9;border-radius:26px;padding:40px;">
-      <div id="form-sent" style="display:none;text-align:center;padding:40px 10px;">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" style="margin-bottom:16px;"><circle cx="12" cy="12" r="10" stroke="#8FA893" stroke-width="1.6"/><path d="M8 12.5L11 15.5L16 9" stroke="#8FA893" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:#1F3D2E;margin:0 0 8px;">Message sent</h3>
-        <p style="font-size:14.5px;color:#6B6B63;margin:0;">Thank you for reaching out. We'll get back to you shortly.</p>
+  <div class="contact-grid" style="display:grid;grid-template-columns:minmax(300px,1.1fr) minmax(260px,.9fr);gap:36px;align-items:start;">
+
+    <!-- Contact form -->
+    <div style="background:#FFF;border:1px solid #E4DDC9;border-radius:24px;padding:36px;">
+      <div id="form-sent" style="display:none;text-align:center;padding:36px 10px;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" style="margin-bottom:14px;"><circle cx="12" cy="12" r="10" stroke="#8FA893" stroke-width="1.6"/><path d="M8 12.5L11 15.5L16 9" stroke="#8FA893" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:19px;font-weight:700;color:#1F3D2E;margin:0 0 8px;">Message sent 🤍</h3>
+        <p style="font-size:14px;color:#6B6B63;margin:0;">Thank you for reaching out. We'll get back to you shortly.</p>
       </div>
-      <form id="contact-form" onsubmit="handleFormSubmit(event)" style="display:flex;flex-direction:column;gap:20px;">
-        <div class="form-field"><label>Name</label><input type="text" required placeholder="Your name" class="form-input" style="width:100%;padding:13px 16px;border:1px solid #E4DDC9;border-radius:12px;font-size:14.5px;font-family:'Inter',sans-serif;background:#FAF6EE;color:#2B2B27;outline:none;"></div>
-        <div class="form-field"><label>Email</label><input type="email" required placeholder="you@email.com" class="form-input" style="width:100%;padding:13px 16px;border:1px solid #E4DDC9;border-radius:12px;font-size:14.5px;font-family:'Inter',sans-serif;background:#FAF6EE;color:#2B2B27;outline:none;"></div>
+      <form id="contact-form" onsubmit="handleFormSubmit(event)" style="display:flex;flex-direction:column;gap:18px;">
+        <div class="form-field"><label>Name</label><input type="text" required placeholder="Your name"></div>
+        <div class="form-field"><label>Email or Instagram</label><input type="text" required placeholder="your@email.com or @yourhandle"></div>
         <div class="form-field">
-          <label>Preferred format</label>
-          <select class="form-input" style="width:100%;padding:13px 16px;border:1px solid #E4DDC9;border-radius:12px;font-size:14.5px;font-family:'Inter',sans-serif;background:#FAF6EE;color:#2B2B27;outline:none;">
-            <option>Voice session</option>
-            <option>Chat session</option>
+          <label>Package you're interested in</label>
+          <select>
+            <option>🌱 Friendly Talk — 15 min (Rs. 300)</option>
+            <option>💛 Heart Talk — 30 min (Rs. 500)</option>
+            <option>🌟 Long Talk — 1 hour (Rs. 1,000)</option>
             <option>Not sure yet</option>
           </select>
         </div>
-        <div class="form-field"><label>Message</label><textarea required rows="4" placeholder="What would you like to talk about?" class="form-input" style="width:100%;padding:13px 16px;border:1px solid #E4DDC9;border-radius:12px;font-size:14.5px;font-family:'Inter',sans-serif;background:#FAF6EE;color:#2B2B27;outline:none;resize:vertical;"></textarea></div>
+        <div class="form-field"><label>Message (optional)</label><textarea rows="4" placeholder="Anything you'd like us to know before we connect..."></textarea></div>
         <button type="submit" class="form-submit">Send Message</button>
       </form>
     </div>
-    <div style="display:flex;flex-direction:column;gap:16px;">
-      <a href="https://wa.me/94776369518?text=Hi%20Pause%20%26%20Talk%2C%20I%27d%20like%20to%20book%20a%20session." target="_blank" style="display:flex;align-items:center;gap:16px;background:#1F3D2E;color:#FAF6EE;border-radius:20px;padding:22px 24px;transition:transform .2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="#FAF6EE"><path d="M12 2C6.5 2 2 6.5 2 12C2 13.8 2.5 15.5 3.3 17L2 22L7.2 20.7C8.7 21.5 10.3 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM12 20.2C10.5 20.2 9.1 19.8 7.9 19L7.6 18.8L4.4 19.6L5.2 16.5L5 16.2C4.1 14.9 3.7 13.5 3.7 12C3.7 7.4 7.4 3.7 12 3.7C16.6 3.7 20.3 7.4 20.3 12C20.3 16.6 16.6 20.2 12 20.2ZM16.3 14.1C16 14 15 13.5 14.7 13.4C14.4 13.3 14.2 13.3 14 13.6C13.8 13.9 13.3 14.5 13.1 14.7C13 14.9 12.8 14.9 12.5 14.8C11.5 14.3 10.8 13.9 10.1 12.8C9.9 12.5 10.1 12.4 10.3 12.2C10.5 12 10.5 11.9 10.6 11.7C10.7 11.5 10.7 11.3 10.6 11.2C10.5 11 9.9 9.6 9.7 9C9.5 8.5 9.2 8.5 9 8.5C8.9 8.5 8.6 8.5 8.4 8.5C8.2 8.5 7.8 8.6 7.5 8.9C7.2 9.2 6.4 9.9 6.4 11.4C6.4 12.9 7.5 14.3 7.6 14.5C7.8 14.7 9.8 17.8 12.8 19C15.6 20.1 15.6 19.7 16.1 19.7C16.6 19.6 17.7 19 17.9 18.3C18.2 17.6 18.2 17 18.1 16.9C18 16.7 17.8 16.6 17.5 16.5L16.3 14.1Z"/></svg>
-        <div><div style="font-size:15px;font-weight:700;">Chat on WhatsApp</div><div style="font-size:13px;color:#C9D3C9;">Fastest way to reach us</div></div>
+
+    <!-- Contact channels -->
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <!-- Primary: Instagram DM -->
+      <a href="https://ig.me/m/pause.andtalk" target="_blank" style="display:flex;align-items:center;gap:16px;background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#FFF;border-radius:20px;padding:22px 24px;transition:transform .2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="#FFF" stroke-width="1.8"/><circle cx="12" cy="12" r="4.5" stroke="#FFF" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1.2" fill="#FFF"/></svg>
+        <div><div style="font-size:15px;font-weight:700;">DM on Instagram</div><div style="font-size:13px;opacity:.85;">@pause.andtalk · Fastest way to book</div></div>
       </a>
+      <!-- Instagram profile -->
+      <a href="https://www.instagram.com/pause.andtalk/" target="_blank" style="display:flex;align-items:center;gap:16px;background:#FFF;border:1px solid #E4DDC9;border-radius:20px;padding:22px 24px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="#1F3D2E" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="#1F3D2E" stroke-width="1.6"/><circle cx="16.8" cy="7.2" r="1" fill="#1F3D2E"/></svg>
+        <div><div style="font-size:15px;font-weight:700;color:#1F3D2E;">Follow on Instagram</div><div style="font-size:13px;color:#6B6B63;">@pause.andtalk</div></div>
+      </a>
+      <!-- Email -->
       <a href="mailto:hello@pauseandtalk.com" style="display:flex;align-items:center;gap:16px;background:#FFF;border:1px solid #E4DDC9;border-radius:20px;padding:22px 24px;">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#1F3D2E" stroke-width="1.6"/><path d="M4 6L12 13L20 6" stroke="#1F3D2E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <div><div style="font-size:15px;font-weight:700;color:#1F3D2E;">Email</div><div style="font-size:13px;color:#6B6B63;">hello@pauseandtalk.com</div></div>
       </a>
-      <a href="https://www.instagram.com/pause.andtalk/" target="_blank" style="display:flex;align-items:center;gap:16px;background:#FFF;border:1px solid #E4DDC9;border-radius:20px;padding:22px 24px;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="#1F3D2E" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="#1F3D2E" stroke-width="1.6"/><circle cx="16.8" cy="7.2" r="1" fill="#1F3D2E"/></svg>
-        <div><div style="font-size:15px;font-weight:700;color:#1F3D2E;">Instagram</div><div style="font-size:13px;color:#6B6B63;">@pause.andtalk</div></div>
-      </a>
+      <!-- Hours -->
       <div style="display:flex;align-items:center;gap:16px;background:#FFF;border:1px solid #E4DDC9;border-radius:20px;padding:22px 24px;">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#1F3D2E" stroke-width="1.6"/><path d="M12 7V12L15.5 14" stroke="#1F3D2E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div><div style="font-size:15px;font-weight:700;color:#1F3D2E;">Working hours</div><div style="font-size:13px;color:#6B6B63;">Mon–Sat, 9am–9pm (local time confirmed at booking)</div></div>
+        <div><div style="font-size:15px;font-weight:700;color:#1F3D2E;">Working hours</div><div style="font-size:13px;color:#6B6B63;">Mon–Sat, 9 am–9 pm (time agreed at booking)</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="background:#1F3D2E;color:#C9D3C9;padding:80px clamp(24px,6vw,96px) 32px;">
+<!-- ══ FOOTER ═══════════════════════════════════════════ -->
+<footer style="background:#1F3D2E;color:#C9D3C9;padding:72px clamp(24px,6vw,96px) 30px;">
   <div style="max-width:1200px;margin:0 auto;">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.12);">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.1);">
       <div>
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
-          <svg width="36" height="27" viewBox="0 0 64 48"><path d="M4 8 C4 4 7 2 11 2 H34 C38 2 41 4 41 8 V22 C41 26 38 28 34 28 H16 L6 34 L8 26 H11 C7 26 4 24 4 20 Z" fill="#FAF6EE"/><rect x="14" y="10" width="4" height="12" rx="1.5" fill="#1F3D2E"/><rect x="22" y="10" width="4" height="12" rx="1.5" fill="#1F3D2E"/><path d="M60 14 C60 10 57 8 53 8 H32 C28 8 25 10 25 14 V26 C25 30 28 32 32 32 H48 L58 40 L56 32 H53 C57 32 60 30 60 26 Z" fill="#8FA893" opacity="0.92"/></svg>
-          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:17px;color:#FAF6EE;">Pause &amp; Talk</span>
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+          <img src="logo.jpeg" alt="Pause &amp; Talk" style="height:32px;width:auto;object-fit:contain;filter:brightness(0) invert(1);">
+          <span style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:16px;color:#FAF6EE;">Pause &amp; Talk</span>
         </div>
-        <p style="font-size:13.5px;line-height:1.7;margin:0 0 16px;">A safe space to talk. We listen.</p>
-        <a href="https://www.instagram.com/pause.andtalk/" target="_blank" style="color:#FAF6EE;font-size:13.5px;font-weight:600;">@pause.andtalk</a>
+        <p style="font-size:13px;line-height:1.7;margin:0 0 14px;">A safe space to talk. We listen. 🤍</p>
+        <a href="https://www.instagram.com/pause.andtalk/" target="_blank" style="color:#C7A464;font-size:13px;font-weight:600;">@pause.andtalk</a>
       </div>
       <div>
-        <h5 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#8FA893;margin:0 0 16px;">Explore</h5>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <a href="#home" style="color:#C9D3C9;font-size:14px;">Home</a>
-          <a href="#about" style="color:#C9D3C9;font-size:14px;">About</a>
-          <a href="#services" style="color:#C9D3C9;font-size:14px;">Services</a>
-          <a href="#how-it-works" style="color:#C9D3C9;font-size:14px;">How It Works</a>
-        </div>
-      </div>
-      <div>
-        <h5 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#8FA893;margin:0 0 16px;">Company</h5>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <a href="#pricing" style="color:#C9D3C9;font-size:14px;">Pricing</a>
-          <a href="#privacy" style="color:#C9D3C9;font-size:14px;">Privacy</a>
-          <a href="#contact" style="color:#C9D3C9;font-size:14px;">Contact</a>
+        <h5 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#8FA893;margin:0 0 14px;">Explore</h5>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="#home" style="color:#C9D3C9;font-size:13.5px;">Home</a>
+          <a href="#about" style="color:#C9D3C9;font-size:13.5px;">About</a>
+          <a href="#services" style="color:#C9D3C9;font-size:13.5px;">Services</a>
+          <a href="#how-it-works" style="color:#C9D3C9;font-size:13.5px;">How It Works</a>
         </div>
       </div>
       <div>
-        <h5 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#8FA893;margin:0 0 16px;">Please note</h5>
-        <p style="font-size:13px;line-height:1.7;margin:0;">Pause &amp; Talk provides listening and companionship services. It is not therapy, counseling, or a crisis service. If you are in crisis, please contact a local emergency service or helpline.</p>
+        <h5 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#8FA893;margin:0 0 14px;">Info</h5>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="#pricing" style="color:#C9D3C9;font-size:13.5px;">Pricing</a>
+          <a href="#privacy" style="color:#C9D3C9;font-size:13.5px;">Privacy</a>
+          <a href="#contact" style="color:#C9D3C9;font-size:13.5px;">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h5 style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#8FA893;margin:0 0 14px;">Please note</h5>
+        <p style="font-size:12.5px;line-height:1.7;margin:0;">Pause &amp; Talk provides listening and companionship services. It is not therapy, counseling, or a crisis service. If you are in crisis, please contact a local emergency service or helpline immediately.</p>
       </div>
     </div>
-    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:28px;">
-      <span style="font-size:12.5px;color:#8FA0A0;">© 2026 Pause &amp; Talk. All rights reserved.</span>
-      <span style="font-size:12.5px;color:#8FA0A0;">Developed by <a href="https://www.blansyn.com" target="_blank" style="color:#C7A464;font-weight:600;">blansyn</a></span>
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:24px;">
+      <span style="font-size:12px;color:#8FA0A0;">© 2026 Pause &amp; Talk. All rights reserved.</span>
+      <span style="font-size:12px;color:#8FA0A0;">Developed by <a href="https://www.blansyn.com" target="_blank" style="color:#C7A464;font-weight:600;">blansyn</a></span>
     </div>
   </div>
 </footer>
 
-<!-- Scroll-to-top -->
+<!-- ══ FLOATING BUTTONS ══════════════════════════════════ -->
+
+<!-- Scroll to top -->
 <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M6 11l6-6 6 6" stroke="#1F3D2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </button>
 
-<!-- WhatsApp float -->
-<a id="wa-float" href="https://wa.me/94776369518?text=Hi%20Pause%20%26%20Talk%2C%20I%27d%20like%20to%20book%20a%20session." target="_blank" aria-label="Chat on WhatsApp">
+<!-- Instagram DM float -->
+<a id="ig-float" href="https://ig.me/m/pause.andtalk" target="_blank" aria-label="DM on Instagram">
   <span class="pulse"></span>
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="#FFFFFF" style="position:relative;"><path d="M12 2C6.5 2 2 6.5 2 12C2 13.8 2.5 15.5 3.3 17L2 22L7.2 20.7C8.7 21.5 10.3 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM16.3 14.1C16 14 15 13.5 14.7 13.4C14.4 13.3 14.2 13.3 14 13.6C13.8 13.9 13.3 14.5 13.1 14.7C13 14.9 12.8 14.9 12.5 14.8C11.5 14.3 10.8 13.9 10.1 12.8C9.9 12.5 10.1 12.4 10.3 12.2C10.5 12 10.5 11.9 10.6 11.7C10.7 11.5 10.7 11.3 10.6 11.2C10.5 11 9.9 9.6 9.7 9C9.5 8.5 9.2 8.5 9 8.5C8.9 8.5 8.6 8.5 8.4 8.5C8.2 8.5 7.8 8.6 7.5 8.9C7.2 9.2 6.4 9.9 6.4 11.4C6.4 12.9 7.5 14.3 7.6 14.5C7.8 14.7 9.8 17.8 12.8 19C15.6 20.1 15.6 19.7 16.1 19.7C16.6 19.6 17.7 19 17.9 18.3C18.2 17.6 18.2 17 18.1 16.9C18 16.7 17.8 16.6 17.5 16.5L16.3 14.1Z"/></svg>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="position:relative;">
+    <rect x="2" y="2" width="20" height="20" rx="6" stroke="#FFF" stroke-width="1.9"/>
+    <circle cx="12" cy="12" r="4.5" stroke="#FFF" stroke-width="1.9"/>
+    <circle cx="17.5" cy="6.5" r="1.3" fill="#FFF"/>
+  </svg>
 </a>
 
 <script>
-// Nav scroll
+// Nav & scroll top
 window.addEventListener('scroll',()=>{
   document.getElementById('main-nav').classList.toggle('scrolled',window.scrollY>16);
   document.getElementById('scroll-top').classList.toggle('visible',window.scrollY>700);
@@ -676,7 +665,7 @@ window.addEventListener('scroll',()=>{
 function toggleMobile(){document.getElementById('mobile-menu').classList.toggle('open');}
 function closeMobile(){document.getElementById('mobile-menu').classList.remove('open');}
 
-// FAQ accordion
+// FAQ
 function toggleFaq(id){
   const panel=document.getElementById(id);
   const chev=document.getElementById(id+'-chev');
